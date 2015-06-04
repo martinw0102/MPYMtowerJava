@@ -1,3 +1,4 @@
+package fr.exiageek;
 public class ExiaGeek {
 	/**
 	 * @param args
