@@ -1,4 +1,5 @@
-package fr.exiageek;
+package fr.ExiaGeek;
+
 public class ExiaGeek {
 	/**
 	 * @param args
