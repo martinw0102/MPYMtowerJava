@@ -1,4 +1,4 @@
-package fr.Case;
+package fr.ExiaGeek.Case;
 
 import java.awt.Image;
 import java.io.File;
@@ -6,7 +6,7 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
-public class Case implements fr.Affichage.PlateauCase {
+public class Case implements fr.ExiaGeek.Affichage.PlateauCase {
 	protected Image image = null;
 	protected char dessin;
 	protected Boolean vide;

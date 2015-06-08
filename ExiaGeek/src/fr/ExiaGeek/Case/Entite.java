@@ -1,4 +1,4 @@
-package fr.Case;
+package fr.ExiaGeek.Case;
 
 import fr.ExiaGeek.Partie;
 
@@ -8,7 +8,7 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
-public abstract class Entite implements fr.Affichage.PlateauPiece{
+public abstract class Entite implements fr.ExiaGeek.Affichage.PlateauPiece{
 	protected int x;
 	protected int y;
 	protected char dessin;

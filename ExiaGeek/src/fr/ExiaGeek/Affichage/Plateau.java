@@ -1,4 +1,4 @@
-package fr.Affichage;
+package fr.ExiaGeek.Affichage;
 
 public class Plateau {
 	private final PlateauFenetre plateauFenetre;

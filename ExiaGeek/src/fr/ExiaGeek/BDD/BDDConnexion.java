@@ -1,4 +1,4 @@
-package fr.BDD;
+package fr.ExiaGeek.BDD;
 
 public class BDDConnexion {
 	

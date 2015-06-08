@@ -1,4 +1,4 @@
-package fr.Affichage;
+package fr.ExiaGeek.Affichage;
 
 /**
  * Interface pour l'affichage d'une pièce

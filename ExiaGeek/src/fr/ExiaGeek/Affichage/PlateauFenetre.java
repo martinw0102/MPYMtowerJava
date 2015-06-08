@@ -1,4 +1,4 @@
-package fr.Affichage;
+package fr.ExiaGeek.Affichage;
 
 import javax.swing.JFrame;
 

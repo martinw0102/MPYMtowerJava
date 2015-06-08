@@ -1,4 +1,4 @@
-package fr.Affichage;
+package fr.ExiaGeek.Affichage;
 
 import java.awt.Graphics;
 import java.util.ArrayList;
