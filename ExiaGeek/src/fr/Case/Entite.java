@@ -1,9 +1,32 @@
 package fr.Case;
 
-public class Entite extends Case{
+import fr.ExiaGeek.Partie;
+
+import java.awt.Image;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
+
+public abstract class Entite implements fr.Affichage.PlateauPiece{
+	protected int x;
+	protected int y;
+	protected char dessin;
+	protected Image image = null;
+	protected Partie partie;
+	
 	protected int pv;
 	protected int portee;
 	protected boolean vivant;
+	
+	public Entite(final Partie partie, final char dessin, final String image, final int x, final int y){
+		this.partie = partie;
+		this.dessin = dessin;
+		this.x = x;
+		this.y = y;
+		this.setImage(image);
+		
+	}
 	
 	protected void prendreDommage(int dommage){
 		if(dommage < this.pv){
@@ -24,12 +47,37 @@ public class Entite extends Case{
 		return false;
 	}
 	
+	public char getDessin(){
+		return this.dessin;
+	}
+	
+	@Override
+	public Image getImage(){
+		return this.image;
+	}
+	
+	@Override
+	public int getPositionHorizontale(){
+		return this.getX();
+	}
+	
+	 @Override
+	 public int getPositionVerticale(){
+		 return this.getY();
+	 }
+	
 	public int getX(){
 		return this.x;
 	}
 	
 	public void setX(int x){
 		this.x = x;
+	}
+	
+	public void setImage(final String image){
+		try{
+			this.image = ImageIO.read(new File("images/" + image));
+		}catch (final IOException e) { e.printStackTrace(); }
 	}
 	
 	public int getY(){
