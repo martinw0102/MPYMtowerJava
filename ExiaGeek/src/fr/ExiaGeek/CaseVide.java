@@ -4,6 +4,6 @@ import fr.ExiaGeek.Case.Case;
 
 public class CaseVide extends Case{
 	public CaseVide() {
-		super('.', "casevide.jpg", false);
+		super('.', "casevide.png", false);
 	}
 }
