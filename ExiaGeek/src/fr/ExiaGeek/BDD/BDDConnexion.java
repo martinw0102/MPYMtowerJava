@@ -35,7 +35,7 @@ public class BDDConnexion {
 		
 	}
 	private int executeUpdate(String query) {
-		return null;
+		return (Integer) null;
 	}
 	
 	public BDDConnexion() {
