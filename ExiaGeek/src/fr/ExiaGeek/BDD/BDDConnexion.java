@@ -69,7 +69,12 @@ public class BDDConnexion {
 		}
 		return -1;
 	}
-
+	
+	
+	public void insertTest() {
+		
+	}
+	
 	/*public RGBPetri getRGBPetribyId(final int id) {
 		ResultSet resultSet = this.executeQuery(BDDRGBPetri.getQuerySelect(id));
 		try {
