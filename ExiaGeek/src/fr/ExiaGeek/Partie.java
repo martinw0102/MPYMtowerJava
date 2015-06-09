@@ -1,6 +1,7 @@
 package fr.ExiaGeek;
 
 import fr.ExiaGeek.Case.Case;
+import fr.ExiaGeek.Case.CaseVide;
 import fr.ExiaGeek.Affichage.Plateau;
 
 public class Partie {
