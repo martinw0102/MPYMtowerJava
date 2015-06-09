@@ -19,12 +19,15 @@ public class BDDConnexion {
 	public Boolean open() {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			this.connection = DriverManager.getConnection(BDDConnexion.url, BDDConnexion.root, BDDConnexion.password);
+	
 			this.statement = this.connection.createStatement();
-		} catch (ClassNotFoundException e) {
+		} 
+		catch (ClassNotFoundException e) {
 			e.printStackTrace();
 			return false;
-		} catch (SQLException e) {
+		} 
+		this.connection = DriverManager.getConnection(BDDConnexion.url, BDDConnexion.root, BDDConnexion.password);
+		catch (SQLException e) {
 			e.printStackTrace();
 			return false;
 		}
@@ -40,6 +43,7 @@ public class BDDConnexion {
 		}
 	}
 
+	@SuppressWarnings("unused")
 	private ResultSet executeQuery(final String query) {
 		try {
 			return this.statement.executeQuery(query);
