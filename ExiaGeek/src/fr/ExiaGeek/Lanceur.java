@@ -1,8 +1,11 @@
 package fr.ExiaGeek;
 
 import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JButton;
 import javax.swing.JTextField;
@@ -17,6 +20,9 @@ public class Lanceur extends JFrame {
 	private JButton boutonNouvellePartie = new JButton("Nouvelle partie"),
 			boutonChargerPartie = new JButton("Charger une partie"),
 			boutonQuitter = new JButton("Quitter");
+	
+	private listenerNouvellePartie nouvellePartie = new listenerNouvellePartie();
+	private listenerChargerPartie chargerPartie = new listenerChargerPartie();
 	
 	public Lanceur(){
 		this.setTitle("ExiaGeek");
@@ -37,6 +43,23 @@ public class Lanceur extends JFrame {
 		JPanel panelCarte = new JPanel();
 		
 		JPanel panelBouton = new JPanel();
+		
+		boutonNouvellePartie.addActionListener(nouvellePartie);
+		boutonChargerPartie.addActionListener(chargerPartie);
+		boutonQuitter.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent arg0){
+				int choix = JOptionPane.showConfirmDialog(null,
+						"Voulez-vous vraiment quitter ?",
+						"Quitter",
+						JOptionPane.YES_NO_CANCEL_OPTION,
+						JOptionPane.QUESTION_MESSAGE);
+				
+				if(choix == JOptionPane.OK_OPTION){
+					System.exit(0);
+				}
+			}
+		});
+				
 		panelBouton.add(boutonNouvellePartie);
 		panelBouton.add(boutonChargerPartie);
 		panelBouton.add(boutonQuitter);
@@ -44,5 +67,17 @@ public class Lanceur extends JFrame {
 		container.add(panelPseudo, BorderLayout.NORTH);
 		container.add(panelCarte, BorderLayout.CENTER);
 		container.add(panelBouton, BorderLayout.SOUTH);
+	}
+	
+	public class listenerNouvellePartie implements ActionListener {
+		public void actionPerformed(ActionEvent arg0){
+			
+		}
+	}
+	
+	public class listenerChargerPartie implements ActionListener {
+		public void actionPerformed(ActionEvent arg0){
+			
+		}
 	}
 }
