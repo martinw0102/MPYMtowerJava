@@ -1,6 +1,5 @@
 package fr.ExiaGeek.BDD;
 
-import java.awt.Color;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -9,7 +8,7 @@ import java.sql.Statement;
 
 
 public class BDDConnexion {
-	private static final String url = "jdbc:mysql:3306//http://10.162.128.244/exiageek";
+	private static final String url = "jdbc:mysql:3306//10.162.128.244/exiageek";
 	private static final String root = "licorne";
 	private static final String password = "";
 	private Connection connection;
@@ -17,22 +16,34 @@ public class BDDConnexion {
 
 
 	public Boolean open() {
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-	
-			this.statement = this.connection.createStatement();
-		} 
-		catch (ClassNotFoundException e) {
-			e.printStackTrace();
-			return false;
-		} 
-		this.connection = DriverManager.getConnection(BDDConnexion.url, BDDConnexion.root, BDDConnexion.password);
-		catch (SQLException e) {
-			e.printStackTrace();
-			return false;
-		}
-		return true;
-	}
+		   try {
+
+			      Class.forName("com.mysql.jdbc.Driver");
+
+			      System.out.println("Driver O.K.");
+
+
+			      String url = "jdbc:mysql://10.162.128.244/exiageek";
+
+			      String user = "licorne";
+
+			      String passwd = "";
+
+
+			      Connection conn = DriverManager.getConnection(url, user, passwd);
+
+			      System.out.println("Connexion effective !");         
+
+			         
+
+			    } catch (Exception e) {
+
+			      e.printStackTrace();
+
+			    } 
+		   return true;
+
+			  }
 
 	public void close() {
 		try {
