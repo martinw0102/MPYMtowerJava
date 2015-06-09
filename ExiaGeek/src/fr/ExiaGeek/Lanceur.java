@@ -29,10 +29,12 @@ public class Lanceur extends JFrame {
         this.setVisible(true);
 	}
 	
-	private void init(){
+	private void init(){		
 		JPanel panelPseudo = new JPanel();
 		panelPseudo.add(labelPseudo);
 		panelPseudo.add(textFieldPseudo);
+		
+		JPanel panelCarte = new JPanel();
 		
 		JPanel panelBouton = new JPanel();
 		panelBouton.add(boutonNouvellePartie);
@@ -40,6 +42,7 @@ public class Lanceur extends JFrame {
 		panelBouton.add(boutonQuitter);
 		
 		container.add(panelPseudo, BorderLayout.NORTH);
+		container.add(panelCarte, BorderLayout.CENTER);
 		container.add(panelBouton, BorderLayout.SOUTH);
 	}
 }
