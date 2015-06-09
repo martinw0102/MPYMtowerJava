@@ -26,7 +26,7 @@ public class Lanceur extends JFrame {
 	
 	public Lanceur(){
 		this.setTitle("ExiaGeek");
-        this.setSize(420, 100);
+        this.setSize(420, 110);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
