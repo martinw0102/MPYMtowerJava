@@ -14,10 +14,14 @@ public abstract class Tours extends Entite {
 		super(partie, dessin, image, x, y);
 	}
 
-	protected void attaquer(Assaillants assaillant){
-		if(assaillant.estVivant()){
-			assaillant.prendreDommage(this.attReseau);
-			assaillant.prendreDommage(this.attSysteme);
+	protected void attaquer(Assaillants cible){
+		if(cible.estVivant() && cible.estAPortee(this)){
+			cible.prendreDommage(this.attReseau);
+			cible.prendreDommage(this.attSysteme);
 		}
+	}
+	
+	protected void miseANiveau(){
+		this.niveau++;
 	}
 }
