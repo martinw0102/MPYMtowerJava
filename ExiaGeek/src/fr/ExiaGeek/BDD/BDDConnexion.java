@@ -9,7 +9,7 @@ import java.sql.Statement;
 
 
 public class BDDConnexion {
-	private static final String url = "jdbc:mysql://http://10.162.128.244/exiageek";
+	private static final String url = "jdbc:mysql:3306//http://10.162.128.244/exiageek";
 	private static final String root = "licorne";
 	private static final String password = "";
 	private Connection connection;
@@ -72,7 +72,7 @@ public class BDDConnexion {
 	
 	
 	public void insertTest() {
-		
+		BDDExiaGeek.getQueryInsert();
 	}
 	
 	/*public RGBPetri getRGBPetribyId(final int id) {
