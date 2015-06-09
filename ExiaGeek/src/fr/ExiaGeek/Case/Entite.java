@@ -28,6 +28,28 @@ public abstract class Entite implements fr.ExiaGeek.Affichage.PlateauPiece{
 		
 	}
 	
+	protected boolean estAPortee(Entite entite){
+		int x = entite.getX(), y = entite.getY();
+		if(this.x + this.portee == x 
+				|| this.x - this.portee == x
+				|| this.y + this.portee == y
+				|| this.y - this.portee == y
+				|| this.x + this.portee == y
+				|| this.x - this.portee == y
+				|| this.y + this.portee == x
+				|| this.y - this.portee == x
+				|| this.x + this.portee == x && this.y + this.portee == y
+				|| this.x + this.portee == x && this.y - this.portee == y
+				|| this.x - this.portee == x && this.y - this.portee == y
+				|| this.y + this.portee == x && this.x + this.portee == y
+				|| this.y + this.portee == x && this.x - this.portee == y
+				|| this.y - this.portee == x && this.x - this.portee == y){
+			
+			return true;
+		}
+		return false;
+	}
+	
 	protected void prendreDommage(int dommage){
 		if(dommage < this.pv){
 			this.pv -= dommage;

@@ -12,6 +12,9 @@ import javax.swing.JTextField;
 import javax.swing.JLabel;
 
 public class Lanceur extends JFrame {
+
+	private static final long serialVersionUID = -4248310360580329628L;
+
 	private JPanel container = new JPanel();
 	
 	private JTextField textFieldPseudo = new JTextField("Votre Pseudo");
