@@ -13,15 +13,15 @@ public class Partie {
 	public int nbVague;	 
 
 	public Partie() {
-		this.cases = new Case[10][10];
+		this.cases = new Case[25][25];
 		Case uneCase;
-		for(int y = 0; y < 10; y++){
-			for(int x = 0; x < 10; x++){
+		for(int y = 0; y < 25; y++){
+			for(int x = 0; x < 25; x++){
 				uneCase = new CaseVide();
 				this.setXY(x, y, uneCase);
 			}
 		}
-		this.plateau = new Plateau(10,10, this.cases);
+		this.plateau = new Plateau(25,25, this.cases);
 	}
 	
 	public void afficher(){
