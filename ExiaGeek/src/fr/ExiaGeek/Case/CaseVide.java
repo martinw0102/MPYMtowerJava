@@ -1,6 +1,4 @@
-package fr.ExiaGeek;
-
-import fr.ExiaGeek.Case.Case;
+package fr.ExiaGeek.Case;
 
 public class CaseVide extends Case{
 	public CaseVide() {
