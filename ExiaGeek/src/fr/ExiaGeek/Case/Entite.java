@@ -25,7 +25,6 @@ public abstract class Entite implements fr.ExiaGeek.Affichage.PlateauPiece{
 		this.x = x;
 		this.y = y;
 		this.setImage(image);
-		
 	}
 	
 	protected boolean estAPortee(Entite entite){
@@ -44,7 +43,6 @@ public abstract class Entite implements fr.ExiaGeek.Affichage.PlateauPiece{
 				|| this.y + this.portee == x && this.x + this.portee == y
 				|| this.y + this.portee == x && this.x - this.portee == y
 				|| this.y - this.portee == x && this.x - this.portee == y){
-			
 			return true;
 		}
 		return false;
