@@ -23,6 +23,5 @@ public abstract class Tours extends Entite {
 	
 	protected void miseANiveau(){
 		this.niveau++;
-		
 	}
 }
