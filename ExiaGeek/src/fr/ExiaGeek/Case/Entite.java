@@ -44,6 +44,7 @@ public abstract class Entite implements fr.ExiaGeek.Affichage.PlateauPiece{
 				|| this.y + this.portee == x && this.x + this.portee == y
 				|| this.y + this.portee == x && this.x - this.portee == y
 				|| this.y - this.portee == x && this.x - this.portee == y){
+			
 			return true;
 		}
 		return false;
