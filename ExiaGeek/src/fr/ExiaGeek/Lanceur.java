@@ -58,6 +58,7 @@ public class Lanceur extends JFrame {
 						JOptionPane.QUESTION_MESSAGE);
 				
 				if(choix == JOptionPane.OK_OPTION){
+					System.out.println("Fermeture de l'application...");
 					System.exit(0);
 				}
 			}
@@ -74,7 +75,8 @@ public class Lanceur extends JFrame {
 	
 	public class listenerNouvellePartie implements ActionListener {
 		public void actionPerformed(ActionEvent arg0){
-			
+			final Partie maPartie = new Partie();
+			maPartie.afficher();
 		}
 	}
 	
