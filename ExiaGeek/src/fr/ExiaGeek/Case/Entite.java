@@ -27,6 +27,10 @@ public abstract class Entite implements fr.ExiaGeek.Affichage.PlateauPiece{
 		this.setImage(image);
 	}
 	
+	public Entite(final Partie partie, final char dessin, final String image){
+		this(partie, dessin, image, 0, 0);
+	}
+	
 	protected boolean estAPortee(Entite entite){
 		int x = entite.getX(), y = entite.getY();
 		if(this.x + this.portee == x 
