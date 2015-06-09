@@ -1,8 +1,11 @@
 package fr.ExiaGeek;
 
 import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JButton;
 import javax.swing.JTextField;
@@ -18,6 +21,9 @@ public class Lanceur extends JFrame {
 			boutonChargerPartie = new JButton("Charger une partie"),
 			boutonQuitter = new JButton("Quitter");
 	
+	private listenerNouvellePartie nouvellePartie = new listenerNouvellePartie();
+	private listenerChargerPartie chargerPartie = new listenerChargerPartie();
+	
 	public Lanceur(){
 		this.setTitle("ExiaGeek");
         this.setSize(420, 100);
@@ -29,17 +35,49 @@ public class Lanceur extends JFrame {
         this.setVisible(true);
 	}
 	
-	private void init(){
+	private void init(){		
 		JPanel panelPseudo = new JPanel();
 		panelPseudo.add(labelPseudo);
 		panelPseudo.add(textFieldPseudo);
 		
+		JPanel panelCarte = new JPanel();
+		
 		JPanel panelBouton = new JPanel();
+		
+		boutonNouvellePartie.addActionListener(nouvellePartie);
+		boutonChargerPartie.addActionListener(chargerPartie);
+		boutonQuitter.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent arg0){
+				int choix = JOptionPane.showConfirmDialog(null,
+						"Voulez-vous vraiment quitter ?",
+						"Quitter",
+						JOptionPane.YES_NO_CANCEL_OPTION,
+						JOptionPane.QUESTION_MESSAGE);
+				
+				if(choix == JOptionPane.OK_OPTION){
+					System.exit(0);
+				}
+			}
+		});
+				
 		panelBouton.add(boutonNouvellePartie);
 		panelBouton.add(boutonChargerPartie);
 		panelBouton.add(boutonQuitter);
 		
 		container.add(panelPseudo, BorderLayout.NORTH);
+		container.add(panelCarte, BorderLayout.CENTER);
 		container.add(panelBouton, BorderLayout.SOUTH);
+	}
+	
+	public class listenerNouvellePartie implements ActionListener {
+		public void actionPerformed(ActionEvent arg0){
+			
+		}
+	}
+	
+	public class listenerChargerPartie implements ActionListener {
+		public void actionPerformed(ActionEvent arg0){
+			
+		}
 	}
 }
