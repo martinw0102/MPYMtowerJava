@@ -1,9 +1,18 @@
 package fr.ExiaGeek;
 
-import javax.swing.*;
+import java.awt.BorderLayout;
 
-public class Lanceur extends JFrame{
-	private JPanel pan = new JPanel();
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JButton;
+import javax.swing.JTextField;
+import javax.swing.JLabel;
+
+public class Lanceur extends JFrame {
+	private JPanel container = new JPanel();
+	
+	private JTextField textFieldPseudo = new JTextField("Votre Pseudo");
+	private JLabel labelPseudo = new JLabel("Pseudo : ");
 	
 	private JButton boutonNouvellePartie = new JButton("Nouvelle partie"),
 			boutonChargerPartie = new JButton("Charger une partie"),
@@ -15,11 +24,22 @@ public class Lanceur extends JFrame{
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
-        pan.add(boutonNouvellePartie);
-        pan.add(boutonChargerPartie);
-        pan.add(boutonQuitter);
-        
-        this.setContentPane(pan);
+        this.init();
+        this.setContentPane(container);
         this.setVisible(true);
+	}
+	
+	private void init(){
+		JPanel panelPseudo = new JPanel();
+		panelPseudo.add(labelPseudo);
+		panelPseudo.add(textFieldPseudo);
+		
+		JPanel panelBouton = new JPanel();
+		panelBouton.add(boutonNouvellePartie);
+		panelBouton.add(boutonChargerPartie);
+		panelBouton.add(boutonQuitter);
+		
+		container.add(panelPseudo, BorderLayout.NORTH);
+		container.add(panelBouton, BorderLayout.SOUTH);
 	}
 }
