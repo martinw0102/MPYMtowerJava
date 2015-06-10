@@ -20,7 +20,7 @@ public class ExiaGeek {
 		bdd.insertTest();
 		bdd.close();
 
-		/*try {
+		try {
 
 		File file = new File("C:\\Users\\Martin\\git\\MPYMtowerJava\\ExiaGeek\\src\\fr\\ExiaGeek\\BDD\\Deorro x Chris Brown - Five More Hours.mp3");
 		FileInputStream fis = new FileInputStream(file);
@@ -30,11 +30,8 @@ public class ExiaGeek {
 			Player player = new Player(bis);
 			player.play();
 		}catch(JavaLayerException ex){
-			
-		}
+			}
 		}catch(IOException e){
-		
-		}*/
-		}
+			}
 	}
-
+}
