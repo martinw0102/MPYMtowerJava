@@ -65,7 +65,5 @@ public class BDDConnexion {
 		
 		executeUpdate(BDDExiaGeek.getQueryInsertPartie(Partie.getScore()));
 		System.out.println("Insertion effectue");
-		
-		//statement.executeUpdate("INSERT INTO `partie` (`Score`, `PV_PosteDeTravail`, `PO`, `ID_Carte`)   VALUES ('"+ 123 +"', '"+ 250 +"', '"+ 7895 +"', '"+ 1 +"')");
 	}
 }
