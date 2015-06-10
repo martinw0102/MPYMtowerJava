@@ -1,6 +1,7 @@
 package fr.ExiaGeek;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -11,9 +12,10 @@ import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.JComboBox;
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Dimension;
+
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
+
 
 
 public class Lanceur extends JFrame {
@@ -55,13 +57,24 @@ public class Lanceur extends JFrame {
 	    String[] tab = {"Map1", "Map2","Map3"};
 	    combo = new JComboBox(tab);
 	    
+	    combo.addItemListener(new ItemState());
+	   
+	    
 	    JPanel top = new JPanel();
 	    top.add(label);
 	    top.add(combo);
 	    container1.add(top, BorderLayout.WEST);
 	    this.setContentPane(container1);
 	    this.setVisible(true);  
+	    
 	}
+	
+	    class ItemState implements ItemListener{
+	        public void itemStateChanged(ItemEvent e) {
+	          System.out.println("événement déclenché sur : " + e.getItem());
+	        }               
+	      }
+	
 	
 	private void init(){		
 		JPanel panelPseudo = new JPanel();
