@@ -34,7 +34,17 @@ public class Partie {
 	}
 	
 	public void calculerScore() {
-		
+
+		    	int TempsEnMillisecondes = 1000;
+
+		    		for (int i = 0; i <= 10; i++) {
+		    			try {
+		    	                Thread.sleep(TempsEnMillisecondes);
+		    	        } 
+		    	        catch (InterruptedException e) {
+		    	        }
+		    	            System.out.println(i);
+		    	    }
 	}
 }
 
