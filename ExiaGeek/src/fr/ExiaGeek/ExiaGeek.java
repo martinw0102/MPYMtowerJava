@@ -7,7 +7,7 @@ import java.io.IOException;
 
 import javazoom.jl.decoder.JavaLayerException;
 import javazoom.jl.player.Player;
-import fr.ExiaGeek.BDD.*;
+
 
 public class ExiaGeek {
 	
@@ -15,7 +15,7 @@ public class ExiaGeek {
 		Lanceur launcher = new Lanceur();
 		try {
 
-			File file = new File("C:\\Users\\Martin\\git\\MPYMtowerJava\\ExiaGeek\\src\\fr\\ExiaGeek\\BDD\\Deorro x Chris Brown - Five More Hours.mp3");
+			File file = new File("C:\\Users\\Nocte\\Desktop\\Musique Jeu 16Bit\\Final Fantasy VII OST - Prelude [Title Theme].mp3");
 			FileInputStream fis = new FileInputStream(file);
 			BufferedInputStream bis = new BufferedInputStream(fis);
 			
