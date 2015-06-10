@@ -20,7 +20,7 @@ public class Lanceur extends JFrame {
 	
 	private JPanel container1 = new JPanel();
 	private JComboBox combo = new JComboBox();
-	private JLabel label = new JLabel("Liste Map");
+	private JLabel label = new JLabel("Liste Maps");
 	
 	
 	private static final long serialVersionUID = -4248310360580329628L;
