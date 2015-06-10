@@ -1,6 +1,7 @@
 package fr.ExiaGeek;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 import fr.ExiaGeek.Affichage.Plateau;
 import fr.ExiaGeek.BDD.BDDConnexion;
@@ -90,19 +91,19 @@ public class Partie {
 	}
 	
 	public void calculerScore() {
-	
-		int TempsEnMillisecondes = 1000;	
-
-		for (int i = 0; i <= 10; i++) {
-			try {
-	                Thread.sleep(TempsEnMillisecondes);
-	                Partie.score++;
-	        } 
-	        catch (InterruptedException e) {
-	        }
-	            System.out.println(Partie.score);
-	            
-	    }
+		    	java.util.Date uDate = new java.util.Date (System.currentTimeMillis ()); //Relever l'heure avant le debut du progamme (en milliseconde) 
+		    	try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+		    	Date dateFin = new Date (System.currentTimeMillis()); //Relever l'heure a la fin du progamme (en milliseconde) 
+		    	Date duree = new Date (System.currentTimeMillis()); //Pour calculer la différence
+		    	duree.setTime (dateFin.getTime () - uDate.getTime ());  //Calcul de la différence
+		    	long secondes = duree.getTime () / 1000;
+		    	secondes %= 60;
+		    	System.out.println ("Votre score est: " + secondes);
 	}
 
 	public static int getScore() {
