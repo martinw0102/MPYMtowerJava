@@ -11,7 +11,7 @@ public class Partie {
 	public int ressource;
 	public String pseudo;
 	public int nbVague;
-	private int score = 0;
+	private static int score = 0;
 
 	public Partie() {
 		this.cases = new Case[25][25];
@@ -40,20 +40,21 @@ public class Partie {
 		    		for (int i = 0; i <= 10; i++) {
 		    			try {
 		    	                Thread.sleep(TempsEnMillisecondes);
-		    	                this.score++;
+		    	                Partie.score++;
 		    	        } 
 		    	        catch (InterruptedException e) {
 		    	        }
-		    	            System.out.println(this.score);
+		    	            System.out.println(Partie.score);
+		    	            
 		    	    }
 	}
 
-	public int getScore() {
+	public static int getScore() {
 		return score;
 	}
 
 	public void setScore(int score) {
-		this.score = score;
+		Partie.score = score;
 	}
 }
 

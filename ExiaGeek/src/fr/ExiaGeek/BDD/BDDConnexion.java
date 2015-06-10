@@ -1,10 +1,10 @@
 package fr.ExiaGeek.BDD;
 
+import fr.ExiaGeek.Partie;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
-
 
 /**
  * Classe de connection à la base de donnée.
@@ -62,7 +62,8 @@ public class BDDConnexion {
 	}
 	
 	public void insert() {
-		executeUpdate(BDDExiaGeek.getQueryInsertPartie());
+		
+		executeUpdate(BDDExiaGeek.getQueryInsertPartie(Partie.getScore()));
 		System.out.println("Insertion effectue");
 		
 		//statement.executeUpdate("INSERT INTO `partie` (`Score`, `PV_PosteDeTravail`, `PO`, `ID_Carte`)   VALUES ('"+ 123 +"', '"+ 250 +"', '"+ 7895 +"', '"+ 1 +"')");
