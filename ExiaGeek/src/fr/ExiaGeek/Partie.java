@@ -12,7 +12,7 @@ public class Partie {
 	private final static int LARGEUR = 25;
 	
 	private final Case cases[][];
-	//private final ArrayList<Entite> entites;
+	private final ArrayList<Entite> entites;
 	private final Boolean affichageConsole = false;
 	private Plateau plateau;
 	
@@ -23,6 +23,8 @@ public class Partie {
 
 	public Partie() {
 		this.cases = new Case[HAUTEUR][LARGEUR];
+		this.entites = new ArrayList<>();
+		
 		Case uneCase;
 		for(int y = 0; y < HAUTEUR; y++){
 			for(int x = 0; x < LARGEUR; x++){
