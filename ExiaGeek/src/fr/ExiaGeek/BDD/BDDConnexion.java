@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+
 /**
  * Classe de connection à la base de donnée.
  * @see {@link BDDExiaGeek} 
@@ -15,14 +16,14 @@ public class BDDConnexion {
 	private static final String user = "licorne";
 	private static final String passwd = "";
 	
-	private Connection connection;
+	private Connection conn;
 	private Statement statement;
 	
 	/**
 	 * Constructeur de la classe 
 	 */
 	public BDDConnexion() {
-		this.connection = null;
+		this.conn = null;
 		this.statement = null;
 	}
 	
@@ -35,8 +36,9 @@ public class BDDConnexion {
 		   Class.forName("com.mysql.jdbc.Driver"); // Chargement du driver MySQL.
 		   System.out.println("Le driver à bien été chargé.");
 
-		   Connection conn = DriverManager.getConnection(url, user, passwd);
-		   System.out.println("Connexion à la base de donnée effectué.");
+		   this.conn = DriverManager.getConnection(url, user, passwd);
+		   this.statement = (Statement) this.conn.createStatement();
+		   System.out.println("Connexion à la base de donnée effectué.");   
 	   } catch (Exception e) { e.printStackTrace(); } 
 	   return true;
 	}
@@ -46,14 +48,24 @@ public class BDDConnexion {
 	 */
 	public void close() {
 		try {
-			this.connection.close();
+			this.conn.close();
 			this.statement.close();
 		}catch(SQLException e) { e.printStackTrace(); }
-	}	
+	}
+
+	private int executeUpdate(final String updateQuery) {
+		try {
+			return this.statement.executeUpdate(updateQuery);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return 0;
+	}
 	
 	public void insertTest() {
-		//BDDExiaGeek.getQueryInsert();
-		Statement statement = (Statement) conn.createStatement();
-		statement.executeUpdate("INSERT INTO `partie` (`Score`, `PV_PosteDeTravail`, `PO`, `ID_Carte`)   VALUES ('"+ 123 +"', '"+ 250 +"', '"+ 7895 +"', '"+ 1 +"')");
+		executeUpdate(BDDExiaGeek.getQueryInsert());
+		System.out.println("Insertion effectue");
+		
+		//statement.executeUpdate("INSERT INTO `partie` (`Score`, `PV_PosteDeTravail`, `PO`, `ID_Carte`)   VALUES ('"+ 123 +"', '"+ 250 +"', '"+ 7895 +"', '"+ 1 +"')");
 	}
 }
