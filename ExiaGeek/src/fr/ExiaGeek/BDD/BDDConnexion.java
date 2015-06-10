@@ -11,9 +11,9 @@ import java.sql.Statement;
  * @see {@link BDDExiaGeek} 
  */
 public class BDDConnexion {
-	private static final String url = "jdbc:mysql:3306//10.162.128.244/exiageek";
+	private static final String url = "jdbc:mysql://10.162.128.244/exiageek";
 	private static final String user = "licorne";
-	private static final String password = "";
+	private static final String passwd = "";
 	
 	private Connection connection;
 	private Statement statement;
@@ -35,7 +35,7 @@ public class BDDConnexion {
 		   Class.forName("com.mysql.jdbc.Driver"); // Chargement du driver MySQL.
 		   System.out.println("Le driver à bien été chargé.");
 
-		   connection = DriverManager.getConnection(url, user, password);
+		   Connection conn = DriverManager.getConnection(url, user, passwd);
 		   System.out.println("Connexion à la base de donnée effectué.");
 	   } catch (Exception e) { e.printStackTrace(); } 
 	   return true;
@@ -52,6 +52,8 @@ public class BDDConnexion {
 	}	
 	
 	public void insertTest() {
-		BDDExiaGeek.getQueryInsert();
+		//BDDExiaGeek.getQueryInsert();
+		Statement statement = (Statement) conn.createStatement();
+		statement.executeUpdate("INSERT INTO `partie` (`Score`, `PV_PosteDeTravail`, `PO`, `ID_Carte`)   VALUES ('"+ 123 +"', '"+ 250 +"', '"+ 7895 +"', '"+ 1 +"')");
 	}
 }
