@@ -14,8 +14,8 @@ public class ExiaGeek {
 	public static void main(String[] args) {		
 		BDDConnexion bdd = new BDDConnexion();
 		bdd.open();
-		Partie  partie = new Partie();
-		partie.calculerScore();
+		//Partie  partie = new Partie();
+		//partie.calculerScore();
 		Lanceur launcher = new Lanceur();
 		bdd.insert();
 		/*try {
