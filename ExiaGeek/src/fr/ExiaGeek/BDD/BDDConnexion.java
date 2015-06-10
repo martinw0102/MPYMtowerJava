@@ -1,12 +1,14 @@
 package fr.ExiaGeek.BDD;
 
 import fr.ExiaGeek.Partie;
+import fr.ExiaGeek.Case.Chemin;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 /**
  * Classe de connection à la base de donnée.
@@ -72,8 +74,9 @@ public class BDDConnexion {
 		return 0;
 	}
 	
-	public ResultSet selectChemin() {
+	public ResultSet selectChemin(ArrayList<Chemin> chemin) {
 		ResultSet resultSet = this.executeQuery(BDDExiaGeek.getQuerySelect(1));
+		resultSet.getInt("x_Chemin");
 		return resultSet;
 		
 	}

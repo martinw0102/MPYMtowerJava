@@ -3,6 +3,7 @@ package fr.ExiaGeek;
 import java.util.ArrayList;
 
 import fr.ExiaGeek.Affichage.Plateau;
+import fr.ExiaGeek.BDD.BDDConnexion;
 import fr.ExiaGeek.Case.Bordure;
 import fr.ExiaGeek.Case.Case;
 import fr.ExiaGeek.Case.CaseVide;
