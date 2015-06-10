@@ -62,7 +62,6 @@ public class BDDConnexion {
 	}
 	
 	public void insert() {
-		
 		executeUpdate(BDDExiaGeek.getQueryInsertPartie(Partie.getScore()));
 		System.out.println("Insertion effectue");
 	}

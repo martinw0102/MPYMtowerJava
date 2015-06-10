@@ -114,6 +114,7 @@ public class Lanceur extends JFrame {
 		public void actionPerformed(ActionEvent arg0){
 			final Partie maPartie = new Partie();
 			maPartie.afficher();
+			maPartie.calculerScore();
 		}
 	}
 	
