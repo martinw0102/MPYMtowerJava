@@ -72,8 +72,9 @@ public class BDDConnexion {
 		return 0;
 	}
 	
-	public void selectChemin() {
+	public ResultSet selectChemin() {
 		ResultSet resultSet = this.executeQuery(BDDExiaGeek.getQuerySelect(1));
+		return resultSet;
 		
 	}
 	
