@@ -52,7 +52,7 @@ public class Lanceur extends JFrame {
 	    this.setLocationRelativeTo(null);
 	    
 	    container.setLayout(new BorderLayout());
-	    String[] tab = {"Map1","Map2","Map3"};
+	    String[] tab = {"Map1", "Map2","Map3"};
 	    combo = new JComboBox(tab);
 	    
 	    combo.addItemListener(new ItemState());
