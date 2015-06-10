@@ -1,8 +1,10 @@
 package fr.ExiaGeek.BDD;
 
 import fr.ExiaGeek.Partie;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -52,6 +54,15 @@ public class BDDConnexion {
 		}catch(SQLException e) { e.printStackTrace(); }
 	}
 
+	private ResultSet executeQuery(final String query) {
+		try {
+			return this.statement.executeQuery(query);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
 	private int executeUpdate(final String updateQuery) {
 		try {
 			return this.statement.executeUpdate(updateQuery);
@@ -59,6 +70,11 @@ public class BDDConnexion {
 			e.printStackTrace();
 		}
 		return 0;
+	}
+	
+	public void selectChemin() {
+		ResultSet resultSet = this.executeQuery(BDDExiaGeek.getQuerySelect(1));
+		
 	}
 	
 	public void insert() {
