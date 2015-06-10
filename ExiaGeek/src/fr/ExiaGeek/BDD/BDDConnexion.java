@@ -76,8 +76,11 @@ public class BDDConnexion {
 	
 	public ResultSet selectChemin(ArrayList<Chemin> chemin) {
 		ResultSet resultSet = this.executeQuery(BDDExiaGeek.getQuerySelect(1));
-		chemin.add(new )
-		resultSet.getInt("X_Chemin");
+		try {
+			chemin.add(new Chemin(resultSet.getInt("X_Chemin"), resultSet.getInt("Y_Chemin")));
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 		return resultSet;
 		
 	}
