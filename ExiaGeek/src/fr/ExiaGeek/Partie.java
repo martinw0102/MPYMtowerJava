@@ -3,16 +3,18 @@ package fr.ExiaGeek;
 import java.util.ArrayList;
 
 import fr.ExiaGeek.Affichage.Plateau;
+import fr.ExiaGeek.Case.Bordure;
 import fr.ExiaGeek.Case.Case;
 import fr.ExiaGeek.Case.CaseVide;
+import fr.ExiaGeek.Case.Chemin;
 import fr.ExiaGeek.Case.Entite;
 
 public class Partie {
-	private final static int HAUTEUR = 25;
-	private final static int LARGEUR = 25;
+	private final static int HAUTEUR = 25, LARGEUR = 25;
 	
 	private final Case cases[][];
 	private final ArrayList<Entite> entites;
+	private final ArrayList<Chemin> chemins;
 	private final Boolean affichageConsole = false;
 	private Plateau plateau;
 	
@@ -24,11 +26,18 @@ public class Partie {
 	public Partie() {
 		this.cases = new Case[HAUTEUR][LARGEUR];
 		this.entites = new ArrayList<>();
+		this.chemins = new ArrayList<>();	
+		
+		
 		
 		Case uneCase;
 		for(int y = 0; y < HAUTEUR; y++){
 			for(int x = 0; x < LARGEUR; x++){
-				uneCase = new CaseVide();
+				if((x == 0) || (x == (LARGEUR - 1)) || ((y == 0) || (y == HAUTEUR - 1))){
+					uneCase = new Bordure();
+				}else{
+					uneCase = new CaseVide();
+				}
 				this.setXY(x, y, uneCase);
 			}
 		}
