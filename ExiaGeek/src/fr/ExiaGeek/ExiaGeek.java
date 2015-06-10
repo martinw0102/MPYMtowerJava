@@ -15,7 +15,6 @@ public class ExiaGeek {
 		BDDConnexion bdd = new BDDConnexion();
 		bdd.open();
 		Lanceur launcher = new Lanceur();
-		
 		/*try {
 		File file = new File("C:\\Users\\Martin\\git\\MPYMtowerJava\\ExiaGeek\\src\\fr\\ExiaGeek\\BDD\\Deorro x Chris Brown - Five More Hours.mp3");
 		FileInputStream fis = new FileInputStream(file);
