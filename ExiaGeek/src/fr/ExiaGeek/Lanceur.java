@@ -50,7 +50,7 @@ public class Lanceur extends JFrame {
         this.setTitle("Animation");
 	    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    this.setLocationRelativeTo(null);
-	    container1.setBackground(Color.white);
+	    
 	    container1.setLayout(new BorderLayout());
 	    String[] tab = {"Map1", "Map2","Map3"};
 	    combo = new JComboBox(tab);
