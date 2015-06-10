@@ -17,7 +17,7 @@ public class ExiaGeek {
 		Lanceur launcher = new Lanceur();
 		BDDConnexion bdd = new BDDConnexion();
 		bdd.open();
-		bdd.insertTest();
+		//bdd.insertTest();
 		bdd.close();
 
 		/*try {
