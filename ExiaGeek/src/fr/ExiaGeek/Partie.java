@@ -8,10 +8,10 @@ public class Partie {
 	private final Case cases[][];
 	private Plateau plateau;
 	
-	public int score;
 	public int ressource;
 	public String pseudo;
-	public int nbVague;	 
+	public int nbVague;
+	private int score = 0;
 
 	public Partie() {
 		this.cases = new Case[25][25];
@@ -40,11 +40,20 @@ public class Partie {
 		    		for (int i = 0; i <= 10; i++) {
 		    			try {
 		    	                Thread.sleep(TempsEnMillisecondes);
+		    	                this.score++;
 		    	        } 
 		    	        catch (InterruptedException e) {
 		    	        }
-		    	            System.out.println(i);
+		    	            System.out.println(this.score);
 		    	    }
+	}
+
+	public int getScore() {
+		return score;
+	}
+
+	public void setScore(int score) {
+		this.score = score;
 	}
 }
 
