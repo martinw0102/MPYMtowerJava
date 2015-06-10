@@ -28,7 +28,7 @@ public class Lanceur extends JFrame {
 	private JPanel container = new JPanel();
 	
 	private JTextField textFieldPseudo = new JTextField("Votre Pseudo");
-	private JLabel labelPseudo = new JLabel("     Pseudo : ");
+	private JLabel labelPseudo = new JLabel("    Pseudo : ");
 	
 	private JButton boutonNouvellePartie = new JButton("Nouvelle partie"),
 			boutonChargerPartie = new JButton("Charger une partie"),
