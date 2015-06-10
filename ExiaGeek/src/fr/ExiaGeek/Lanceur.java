@@ -4,7 +4,6 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -12,7 +11,6 @@ import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.JComboBox;
-
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 
@@ -20,14 +18,14 @@ import java.awt.event.ItemListener;
 
 public class Lanceur extends JFrame {
 	
-	private JPanel container1 = new JPanel();
+	private JPanel container = new JPanel();
 	private JComboBox combo = new JComboBox();
 	private JLabel label = new JLabel("Liste Maps");
 	
 	
 	private static final long serialVersionUID = -4248310360580329628L;
 
-	private JPanel container = new JPanel();
+	
 	
 	private JTextField textFieldPseudo = new JTextField("Votre Pseudo");
 	private JLabel labelPseudo = new JLabel("    Pseudo : ");
@@ -46,15 +44,15 @@ public class Lanceur extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
         this.init();
-        this.setContentPane(container1);
+        this.setContentPane(container);
         this.setVisible(true);
         
         this.setTitle("Animation");
 	    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    this.setLocationRelativeTo(null);
 	    
-	    container1.setLayout(new BorderLayout());
-	    String[] tab = {"Map1", "Map2","Map3"};
+	    container.setLayout(new BorderLayout());
+	    String[] tab = {"Map1","Map2","Map3"};
 	    combo = new JComboBox(tab);
 	    
 	    combo.addItemListener(new ItemState());
@@ -63,8 +61,8 @@ public class Lanceur extends JFrame {
 	    JPanel top = new JPanel();
 	    top.add(label);
 	    top.add(combo);
-	    container1.add(top, BorderLayout.WEST);
-	    this.setContentPane(container1);
+	    container.add(top, BorderLayout.WEST);
+	    this.setContentPane(container);
 	    this.setVisible(true);  
 	    
 	}
@@ -106,9 +104,9 @@ public class Lanceur extends JFrame {
 		panelBouton.add(boutonChargerPartie);
 		panelBouton.add(boutonQuitter);
 		
-		container1.add(panelPseudo, BorderLayout.NORTH);
-		container1.add(panelCarte, BorderLayout.EAST);
-		container1.add(panelBouton, BorderLayout.SOUTH);
+		container.add(panelPseudo, BorderLayout.NORTH);
+		container.add(panelCarte, BorderLayout.EAST);
+		container.add(panelBouton, BorderLayout.SOUTH);
 	}
 	
 
