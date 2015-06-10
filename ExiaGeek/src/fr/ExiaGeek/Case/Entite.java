@@ -1,12 +1,12 @@
 package fr.ExiaGeek.Case;
 
-import fr.ExiaGeek.Partie;
-
 import java.awt.Image;
 import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
+
+import fr.ExiaGeek.Partie;
 
 public abstract class Entite implements fr.ExiaGeek.Affichage.PlateauPiece{
 	protected int x;
