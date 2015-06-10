@@ -8,7 +8,7 @@ public class Parefeu extends Tours {
 		super(partie, dessin, image, x, y);
 		this.pv = 100;
 		this.cout = 80;
-		this.portee = 0;
+		this.portee = 5;
 		this.attReseau = 20;
 		this.attSysteme = 0;
 		this.vitAttaque = 2;

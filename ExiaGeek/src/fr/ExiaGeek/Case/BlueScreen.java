@@ -8,7 +8,7 @@ public class BlueScreen extends Assaillants {
 		super(partie, dessin, image, x, y);
 		
 		this.pv = 60;
-		this.portee = 0;
+		this.portee = 3;
 		this.attaque = 35;
 		this.vitDeplacement = 3;
 		this.resistReseau = 0;

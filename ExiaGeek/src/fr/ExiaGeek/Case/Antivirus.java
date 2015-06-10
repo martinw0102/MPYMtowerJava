@@ -8,7 +8,7 @@ public class Antivirus extends Tours {
 		super(partie, dessin, image, x, y);
 		this.pv = 50;
 		this.cout = 30;
-		this.portee = 0;
+		this.portee = 4;
 		this.attReseau = 15;
 		this.attSysteme = 0;
 		this.vitAttaque = 3;

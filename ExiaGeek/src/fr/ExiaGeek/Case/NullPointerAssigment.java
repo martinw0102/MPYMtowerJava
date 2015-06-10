@@ -9,7 +9,7 @@ public class NullPointerAssigment extends Assaillants {
 		super(partie, dessin, image, x, y);
 		
 		this.pv = 45;
-		this.portee = 0;
+		this.portee = 2;
 		this.attaque = 20;
 		this.vitDeplacement = 2;
 		this.resistReseau = 0;

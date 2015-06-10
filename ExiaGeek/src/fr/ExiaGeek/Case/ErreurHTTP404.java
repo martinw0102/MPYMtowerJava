@@ -8,7 +8,7 @@ public class ErreurHTTP404 extends Assaillants {
 		super(partie, dessin, image, x, y);
 		 
 		this.pv = 35;
-		this.portee = 0;
+		this.portee = 2;
 		this.attaque = 10;
 		this.vitDeplacement = 1;
 		this.resistSysteme = 0;

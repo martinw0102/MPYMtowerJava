@@ -8,7 +8,7 @@ public class StackOverflow extends Assaillants {
 		super(partie, dessin, image, x, y);
 		
 		this.pv = 15;
-		this.portee = 0;
+		this.portee = 2;
 		this.attaque = 25;
 		this.vitDeplacement = 4;
 		this.resistReseau = 0;

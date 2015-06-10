@@ -15,7 +15,7 @@ public class ExiaGeek {
 		Lanceur launcher = new Lanceur();
 		try {
 
-			File file = new File("C:\\Users\\Nocte\\Desktop\\Musique Jeu 16Bit\\Final Fantasy VII OST - Prelude [Title Theme].mp3");
+			File file = new File("C:\\Users\\Nocte\\Desktop\\Musique Jeu 16Bit\\Zelda Theme.mp3");
 			FileInputStream fis = new FileInputStream(file);
 			BufferedInputStream bis = new BufferedInputStream(fis);
 			

@@ -9,7 +9,7 @@ public class MachineVirtuelle extends Tours {
 		super(partie, dessin, image, x, y);
 		this.pv = 50;
 		this.cout = 60;
-		this.portee = 0;
+		this.portee = 4;
 		this.attReseau = 0;
 		this.attSysteme = 10;
 		this.vitAttaque = 1;

@@ -8,7 +8,7 @@ public class MotDePasse extends Tours {
 		super(partie, dessin, image, x, y);
 		this.pv = 80;
 		this.cout = 50;
-		this.portee = 0;
+		this.portee = 4;
 		this.attReseau = 0;
 		this.attSysteme = 10;
 		this.vitAttaque = 2;

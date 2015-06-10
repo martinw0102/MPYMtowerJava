@@ -9,7 +9,7 @@ public class FortiGuardWebFiltering extends Assaillants {
 		super(partie, dessin, image, x, y);
 		
 		this.pv = 25;
-		this.portee = 0;
+		this.portee = 2;
 		this.attaque = 15;
 		this.vitDeplacement = 2;
 		this.resistSysteme = 0;
