@@ -4,15 +4,25 @@ import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JButton;
 import javax.swing.JTextField;
+import javax.swing.JLabel;
+import javax.swing.JComboBox;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+
 
 public class Lanceur extends JFrame {
-
+	
+	private JPanel container1 = new JPanel();
+	private JComboBox combo = new JComboBox();
+	private JLabel label = new JLabel("Liste Map");
+	
+	
 	private static final long serialVersionUID = -4248310360580329628L;
 
 	private JPanel container = new JPanel();
@@ -29,13 +39,28 @@ public class Lanceur extends JFrame {
 	
 	public Lanceur(){
 		this.setTitle("ExiaGeek");
-        this.setSize(420, 110);
+        this.setSize(420, 150);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
         this.init();
-        this.setContentPane(container);
+        this.setContentPane(container1);
         this.setVisible(true);
+        
+        this.setTitle("Animation");
+	    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	    this.setLocationRelativeTo(null);
+	    container1.setBackground(Color.white);
+	    container1.setLayout(new BorderLayout());
+	    String[] tab = {"Map1", "Map2","Map3"};
+	    combo = new JComboBox(tab);
+	    
+	    JPanel top = new JPanel();
+	    top.add(label);
+	    top.add(combo);
+	    container1.add(top, BorderLayout.WEST);
+	    this.setContentPane(container1);
+	    this.setVisible(true);  
 	}
 	
 	private void init(){		
@@ -68,11 +93,12 @@ public class Lanceur extends JFrame {
 		panelBouton.add(boutonChargerPartie);
 		panelBouton.add(boutonQuitter);
 		
-		container.add(panelPseudo, BorderLayout.NORTH);
-		container.add(panelCarte, BorderLayout.CENTER);
-		container.add(panelBouton, BorderLayout.SOUTH);
+		container1.add(panelPseudo, BorderLayout.NORTH);
+		container1.add(panelCarte, BorderLayout.EAST);
+		container1.add(panelBouton, BorderLayout.SOUTH);
 	}
 	
+
 	public class listenerNouvellePartie implements ActionListener {
 		public void actionPerformed(ActionEvent arg0){
 			final Partie maPartie = new Partie();
