@@ -132,7 +132,7 @@ public class Partie {
 	}
 	
 	public void calculerScore() {
-		    	java.util.Date temps = new java.util.Date (System.currentTimeMillis ()); //Relever l'heure avant le debut du progamme (en milliseconde) 
+		    	/*java.util.Date temps = new java.util.Date (System.currentTimeMillis ()); //Relever l'heure avant le debut du progamme (en milliseconde) 
 		    	try {
 					Thread.sleep(1000);
 				} catch (InterruptedException e) {
@@ -143,8 +143,15 @@ public class Partie {
 		    	duree.setTime (dateFin.getTime () - temps.getTime ());  //Calcul de la diffï¿½rence
 		    	long secondes = duree.getTime () / 1000;
 		    	secondes %= 60;
-		    	System.out.println ("Votre score est: " + secondes);
-	}
+		    	System.out.println ("Votre score est: " + secondes);*/
+    	Date dateFin = new Date (System.currentTimeMillis()); //Relever l'heure a la fin du progamme (en milliseconde) 
+    	Date duree = new Date (System.currentTimeMillis()); //Pour calculer la différence
+    	duree.setTime (dateFin.getTime () - dateDebut.getTime ());  //Calcul de la différence
+    	long score = duree.getTime () / 1000;
+    	score %= 60;
+    	System.out.println ("Votre score est: " + score);
+}		
+
 
 	public static int getScore() {
 		return score;
