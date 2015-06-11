@@ -20,16 +20,12 @@ import java.util.Date;
 
 
 public class Lanceur extends JFrame {
-	
-	public static Object uDate;
 	private JPanel container = new JPanel();
 	private JComboBox combo = new JComboBox();
 	private JLabel label = new JLabel("Liste Maps");
 	
 	
 	private static final long serialVersionUID = -4248310360580329628L;
-	//public static long dateDebut;
-	
 	
 	private JTextField textFieldPseudo = new JTextField("Votre Pseudo");
 	private JLabel labelPseudo = new JLabel("    Pseudo : ");
@@ -42,7 +38,6 @@ public class Lanceur extends JFrame {
 	private listenerChargerPartie chargerPartie = new listenerChargerPartie();
 	
 	public Lanceur(){
-		Date dateDebut = new Date();
 		this.setTitle("ExiaGeek");
         this.setSize(420, 150);
         this.setLocationRelativeTo(null);
@@ -58,10 +53,7 @@ public class Lanceur extends JFrame {
 	    
 	    container.setLayout(new BorderLayout());
 	    String[] tab = {"Map1", "Map2","Map3"};
-	    combo = new JComboBox(tab);
-	    
-	    combo.addItemListener(new ItemState());
-	   
+	    combo = new JComboBox(tab);	   
 	    
 	    JPanel top = new JPanel();
 	    top.add(label);
@@ -71,13 +63,6 @@ public class Lanceur extends JFrame {
 	    this.setVisible(true);  
 	    
 	}
-	
-	    class ItemState implements ItemListener{
-	        public void itemStateChanged(ItemEvent e) {
-	          System.out.println("�v�nement d�clench� sur : " + e.getItem());
-	        }               
-	      }
-	
 	
 	private void init(){		
 		JPanel panelPseudo = new JPanel();
@@ -120,21 +105,6 @@ public class Lanceur extends JFrame {
 			final Partie maPartie = new Partie();
 				maPartie.afficher();
 				maPartie.jouer();
-			//maPartie.afficher();
-
-						//dateDebut.System.currentTimeMillis(); //Relever l'heure avant le debut du progamme (en milliseconde) 
-					    	/*try {
-							Thread.sleep(1000);
-						} catch (InterruptedException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						}
-				    	Date dateFin = new Date (System.currentTimeMillis()); //Relever l'heure a la fin du progamme (en milliseconde) 
-				    	Date duree = new Date (System.currentTimeMillis()); //Pour calculer la diff�rence
-				    	duree.setTime (dateFin.getTime () - dateDebut.getTime ());  //Calcul de la diff�rence
-				    	long score = duree.getTime () / 1000;
-				    	score %= 60;
-				    	System.out.println ("Votre score est: " + score);*/
 		}		
 	}
 	

@@ -4,9 +4,8 @@ import fr.ExiaGeek.Partie;
 
 public class NullPointerAssigment extends Assaillants {
 
-	public NullPointerAssigment(Partie partie, char dessin, String image,
-			int x, int y) {
-		super(partie, dessin, image, x, y);
+	public NullPointerAssigment(Partie partie, char dessin, String image) {
+		super(partie, dessin, image);
 		
 		this.pv = 45;
 		this.portee = 2;

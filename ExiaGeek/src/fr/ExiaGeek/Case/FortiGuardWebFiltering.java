@@ -4,9 +4,8 @@ import fr.ExiaGeek.Partie;
 
 public class FortiGuardWebFiltering extends Assaillants {
 
-	public FortiGuardWebFiltering(Partie partie, char dessin, String image,
-			int x, int y) {
-		super(partie, dessin, image, x, y);
+	public FortiGuardWebFiltering(Partie partie, char dessin, String image) {
+		super(partie, dessin, image);
 		
 		this.pv = 25;
 		this.portee = 2;
