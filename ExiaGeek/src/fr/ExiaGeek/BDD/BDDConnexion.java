@@ -88,9 +88,12 @@ public class BDDConnexion {
 	}
 	
 	public int selectXPT(int x){
+		ResultSet resultSet = this.executeQuery(BDDExiaGeek.getQuerySelectCoord(1));
 		try{
-			ResultSet resultSet = this.executeQuery(BDDExiaGeek.getQuerySelectCoord(1));
+			for (; resultSet.next();) {
 			x = resultSet.getInt("X_PosteDeTravail");
+			
+			}
 		}catch (SQLException e) {
 			e.printStackTrace();
 		}
