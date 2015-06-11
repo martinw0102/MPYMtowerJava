@@ -86,10 +86,27 @@ public class BDDConnexion {
 		return chemin;
 	}
 	
-	public int[][] selectCoord(int coord[][]) throws SQLException {
-		ResultSet resultSet = this.executeQuery(BDDExiaGeek.getQuerySelectCoord(1));
-		int coord1[][] = { {resultSet.getInt("X_PosteDeTravail"), resultSet.getInt("X_Spawn")}, {resultSet.getInt("Y_PosteDeTravail"), resultSet.getInt("Y_Spawn")}};
-		return coord1;
+	public int[] selectCoordPoste(int[] coord) {
+		try{
+			ResultSet resultSet = this.executeQuery(BDDExiaGeek.getQuerySelectCoord(1));
+			coord[0] = resultSet.getInt("X_PosteDeTravail");
+			coord[1] = resultSet.getInt("Y_PosteDeTravail");
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return coord;
+	}
+	
+	public int[] selectCoordSpawn(int[] coord)
+	{
+		try{
+			ResultSet resultSet = this.executeQuery(BDDExiaGeek.getQuerySelectCoord(1));
+			coord[0] = resultSet.getInt("X_Spawn");
+			coord[1] = resultSet.getInt("Y_Spawn");
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return coord;
 	}
 	
 	public void insert() {

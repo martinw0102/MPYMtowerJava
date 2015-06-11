@@ -1,6 +1,11 @@
 package fr.ExiaGeek.Case;
 
-import java.awt.Image;
+import java.awt.AlphaComposite;
+import java.awt.Color;
+import java.awt.Composite;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
@@ -12,7 +17,7 @@ public abstract class Entite implements fr.ExiaGeek.Affichage.PlateauPiece{
 	protected int x;
 	protected int y;
 	protected char dessin;
-	protected Image image = null;
+	protected BufferedImage image = null;
 	protected Partie partie;
 	
 	protected int pv;
@@ -61,10 +66,6 @@ public abstract class Entite implements fr.ExiaGeek.Affichage.PlateauPiece{
 		return this.dessin;
 	}
 	
-	@Override
-	public Image getImage(){
-		return this.image;
-	}
 	
 	@Override
 	public int getPositionHorizontale(){
@@ -82,6 +83,27 @@ public abstract class Entite implements fr.ExiaGeek.Affichage.PlateauPiece{
 	
 	public void setX(int x){
 		this.x = x;
+	}
+	
+	@Override
+	public BufferedImage getBImage(){
+		
+		BufferedImage image = new BufferedImage(30,30,BufferedImage.TYPE_INT_ARGB);
+		Graphics g = image.getGraphics();
+		if( g instanceof Graphics2D ){
+			Graphics2D g2d = (Graphics2D) g;
+			Composite original = g2d.getComposite();
+			g2d.setBackground(new Color(0,0,0,0));
+			g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_IN, 0.0f));
+			g.clearRect(0, 0, 30, 30);
+			g2d.setComposite(original);
+			}
+		g.drawImage(this.image, 0, 0, 30, 30, null);
+		
+		g.setColor(Color.red);
+		g.fillRect(0, 0, image.getWidth(), 5 );
+		
+		return image;
 	}
 	
 	public void setImage(final String image){

@@ -1,5 +1,6 @@
 package fr.ExiaGeek;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -10,6 +11,7 @@ import fr.ExiaGeek.Case.Case;
 import fr.ExiaGeek.Case.CaseVide;
 import fr.ExiaGeek.Case.Chemin;
 import fr.ExiaGeek.Case.Entite;
+import fr.ExiaGeek.Case.PosteDeTravail;
 
 public class Partie {
 	private final static int HAUTEUR = 25, LARGEUR = 25;
@@ -30,12 +32,15 @@ public class Partie {
 		this.entites = new ArrayList<>();
 		this.chemins = new ArrayList<>();
 		
+		int coordS[] = null;
+		
 		BDDConnexion bdd = new BDDConnexion();
 		bdd.open();
 		bdd.selectChemin(this.chemins);
+		bdd.selectCoordSpawn(coordS);
 		bdd.close();
 		
-		Case uneCase;
+		Case uneCase = null;
 		for(int y = 0; y < HAUTEUR; y++){
 			for(int x = 0; x < LARGEUR; x++){
 				if((x == 0) || (x == (LARGEUR - 1)) || ((y == 0) || (y == HAUTEUR - 1))){
@@ -49,6 +54,8 @@ public class Partie {
 			}
 		}
 		this.plateau = new Plateau(HAUTEUR, LARGEUR, this.cases);
+		
+		this.placerPT();
 	}
 	
 	private boolean testChemin(ArrayList<Chemin> chemin, int x, int y){
@@ -94,6 +101,27 @@ public class Partie {
 			}
 		}
 		return null;
+	}
+	
+	private void placerPT(){
+		int coord[] = null;
+		
+		BDDConnexion bdd = new BDDConnexion();
+		bdd.open();
+		bdd.selectCoordPoste(coord);
+		bdd.close();
+		
+		System.out.println(coord[0] + "  " + coord[1]);
+		
+		/*final PosteDeTravail pt = new PosteDeTravail(this);
+		this.entites.add(pt);
+		this.placerEntite(pt, coord[0], coord[1]);
+		this.plateau.placerPiece(pt);*/
+	}
+	
+	private void placerEntite(final Entite e, int x, int y){
+		e.setX(x);
+		e.setY(y);
 	}
 	
 	public Case getXY(final int x, final int y){
