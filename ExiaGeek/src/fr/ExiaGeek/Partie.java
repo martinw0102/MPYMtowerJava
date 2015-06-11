@@ -2,6 +2,7 @@ package fr.ExiaGeek;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 
 import fr.ExiaGeek.Affichage.Plateau;
 import fr.ExiaGeek.BDD.BDDConnexion;
@@ -28,15 +29,19 @@ public class Partie {
 	public Partie() {
 		this.cases = new Case[HAUTEUR][LARGEUR];
 		this.entites = new ArrayList<>();
-		this.chemins = new ArrayList<>();	
-		
-		
+		this.chemins = new ArrayList<>();
+		BDDConnexion bdd = new BDDConnexion();
+		bdd.open();
+		bdd.selectChemin(this.chemins);
+		bdd.close();
 		
 		Case uneCase;
 		for(int y = 0; y < HAUTEUR; y++){
 			for(int x = 0; x < LARGEUR; x++){
 				if((x == 0) || (x == (LARGEUR - 1)) || ((y == 0) || (y == HAUTEUR - 1))){
 					uneCase = new Bordure();
+				}else if(chemins.contains(x) && chemins.contains(y)){
+					uneCase = new Chemin();
 				}else{
 					uneCase = new CaseVide();
 				}
@@ -99,8 +104,8 @@ public class Partie {
 					e.printStackTrace();
 				}
 		    	Date dateFin = new Date (System.currentTimeMillis()); //Relever l'heure a la fin du progamme (en milliseconde) 
-		    	Date duree = new Date (System.currentTimeMillis()); //Pour calculer la différence
-		    	duree.setTime (dateFin.getTime () - temps.getTime ());  //Calcul de la différence
+		    	Date duree = new Date (System.currentTimeMillis()); //Pour calculer la diffï¿½rence
+		    	duree.setTime (dateFin.getTime () - temps.getTime ());  //Calcul de la diffï¿½rence
 		    	long secondes = duree.getTime () / 1000;
 		    	secondes %= 60;
 		    	System.out.println ("Votre score est: " + secondes);

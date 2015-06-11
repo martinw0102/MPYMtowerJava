@@ -3,8 +3,12 @@ package fr.ExiaGeek.Case;
 public class Chemin extends Case{
 	private int x, y;
 	
+	public Chemin(){
+		super('.', "cheminassaillant.png", false);
+	}
+	
 	public Chemin(int x, int y){
-		super('.', "caseennemi.png", false);
+		super('.', "cheminassaillant.png", false);
 		this.x = x;
 		this.y = y;
 	}

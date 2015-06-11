@@ -74,17 +74,16 @@ public class BDDConnexion {
 		return 0;
 	}
 	
-	public ResultSet selectChemin(ArrayList<Chemin> chemin) {
+	public ArrayList<Chemin> selectChemin(ArrayList<Chemin> chemin) {
 		ResultSet resultSet = this.executeQuery(BDDExiaGeek.getQuerySelect(1));
 		try {
-			for (int i = 0; resultSet.next() ; i++) {
-			chemin.add(new Chemin(resultSet.getInt("X_Chemin"), resultSet.getInt("Y_Chemin")));
+			for (; resultSet.next() ;) {
+				chemin.add(new Chemin(resultSet.getInt("X_Chemin"), resultSet.getInt("Y_Chemin")));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return resultSet;
-		
+		return chemin;
 	}
 	
 	public void insert() {
