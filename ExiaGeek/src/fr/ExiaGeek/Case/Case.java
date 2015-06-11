@@ -21,10 +21,6 @@ public class Case implements fr.ExiaGeek.Affichage.PlateauCase {
 		}
 	}
 
-	public Boolean estVide() {
-		return this.vide;
-	}
-
 	public char getDessin() {
 		return this.dessin;
 	}

@@ -1,6 +1,9 @@
 package fr.ExiaGeek.Case;
 
+import java.util.ArrayList;
+
 import fr.ExiaGeek.Partie;
+import fr.ExiaGeek.BDD.BDDConnexion;
 
 public abstract class Assaillants extends Entite {
 	protected int attaque;
@@ -13,11 +16,10 @@ public abstract class Assaillants extends Entite {
 		super(partie, dessin, image);
 	}
 
-	protected void seDeplacer() {
-		if(this.x + 1 == Chemin){
-			
-		}
+	public void seDeplacer() {
+		this.y -= 1;
 	}
+	
 	protected void attaquer() {
 		
 	}

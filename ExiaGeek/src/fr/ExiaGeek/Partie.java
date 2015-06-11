@@ -12,7 +12,7 @@ public class Partie {
 	
 	private final Case cases[][];
 	private final ArrayList<Chemin> chemins;
-	private final ArrayList<Entite> vagueActuel;
+	private final ArrayList<Assaillants> vagueActuel;
 	private final Boolean affichageConsole = false;
 	private Plateau plateau;
 	
@@ -97,6 +97,12 @@ public class Partie {
 			}
 		}
 		return null;
+	}
+	
+	public void jouer(){
+		for(final Assaillants e : this.vagueActuel){
+			e.seDeplacer();
+		}
 	}
 	
 	private void placerPT(){		

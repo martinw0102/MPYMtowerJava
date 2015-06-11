@@ -118,7 +118,9 @@ public class Lanceur extends JFrame {
 	public class listenerNouvellePartie implements ActionListener {
 		public void actionPerformed(ActionEvent arg0){
 			final Partie maPartie = new Partie();
-			maPartie.afficher();
+				maPartie.afficher();
+				maPartie.jouer();
+			//maPartie.afficher();
 
 						//dateDebut.System.currentTimeMillis(); //Relever l'heure avant le debut du progamme (en milliseconde) 
 					    	/*try {
