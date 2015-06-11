@@ -47,7 +47,7 @@ public class Lanceur extends JFrame {
         this.setContentPane(container);
         this.setVisible(true);
         
-        this.setTitle("Animation");
+        this.setTitle("Lanceur");
 	    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    this.setLocationRelativeTo(null);
 	    
