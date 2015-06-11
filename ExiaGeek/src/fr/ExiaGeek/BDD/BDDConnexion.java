@@ -90,10 +90,12 @@ public class BDDConnexion {
 	public int selectXPT(int x){
 		ResultSet resultSet = this.executeQuery(BDDExiaGeek.getQuerySelectCoord(1));
 		try{
-			for (; resultSet.next();) {
-			x = resultSet.getInt("X_PosteDeTravail");
-			
-			}
+			//x = resultSet.getInt("X_PosteDeTravail");
+		      while(resultSet.next()){
+		    	  System.out.print("\t" + resultSet.getInt("X_PosteDeTravail") + "\t |");
+		    	  System.out.print("\t" + resultSet.getInt("Y_PosteDeTravail") + "\t |");
+		    	  System.out.println("\n---------------------------------");
+		    	}
 		}catch (SQLException e) {
 			e.printStackTrace();
 		}
