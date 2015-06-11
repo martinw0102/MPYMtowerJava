@@ -143,13 +143,13 @@ public class Partie {
 		    	duree.setTime (dateFin.getTime () - temps.getTime ());  //Calcul de la diffï¿½rence
 		    	long secondes = duree.getTime () / 1000;
 		    	secondes %= 60;
-		    	System.out.println ("Votre score est: " + secondes);*/
+		    	System.out.println ("Votre score est: " + secondes);
     	Date dateFin = new Date (System.currentTimeMillis()); //Relever l'heure a la fin du progamme (en milliseconde) 
-    	Date duree = new Date (System.currentTimeMillis()); //Pour calculer la différence
-    	duree.setTime (dateFin.getTime () - dateDebut.getTime ());  //Calcul de la différence
+    	Date duree = new Date (System.currentTimeMillis()); //Pour calculer la diffï¿½rence
+    	duree.setTime (dateFin.getTime () - dateDebut.getTime ());  //Calcul de la diffï¿½rence
     	long score = duree.getTime () / 1000;
     	score %= 60;
-    	System.out.println ("Votre score est: " + score);
+    	System.out.println ("Votre score est: " + score);*/
 }		
 
 
