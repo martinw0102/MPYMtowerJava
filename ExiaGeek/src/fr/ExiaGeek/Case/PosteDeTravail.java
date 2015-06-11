@@ -1,7 +1,5 @@
 package fr.ExiaGeek.Case;
 
-import java.awt.Image;
-
 import fr.ExiaGeek.Partie;
 
 public class PosteDeTravail extends Entite {
@@ -10,10 +8,4 @@ public class PosteDeTravail extends Entite {
 		super(partie, 'x', "cristal.png");
 		this.pv = 200;
 	}
-
-	@Override
-	public Image getImage() {
-		return null;
-	}
-
 }

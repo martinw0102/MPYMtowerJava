@@ -1,6 +1,5 @@
 package fr.ExiaGeek;
 
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -104,19 +103,19 @@ public class Partie {
 	}
 	
 	private void placerPT(){
-		int coord[] = null;
+		/*ArrayList<PosteDeTravail> pt = new ArrayList();
 		
 		BDDConnexion bdd = new BDDConnexion();
 		bdd.open();
-		bdd.selectCoordPoste(coord);
+		bdd.selectCoordPoste(pt);
 		bdd.close();
 		
-		System.out.println(coord[0] + "  " + coord[1]);
+		System.out.println(coord[0] + "  " + coord[1]);*/
 		
-		/*final PosteDeTravail pt = new PosteDeTravail(this);
+		final PosteDeTravail pt = new PosteDeTravail(this);
 		this.entites.add(pt);
-		this.placerEntite(pt, coord[0], coord[1]);
-		this.plateau.placerPiece(pt);*/
+		this.placerEntite(pt, 4, 3);
+		this.plateau.placerPiece(pt);
 	}
 	
 	private void placerEntite(final Entite e, int x, int y){
@@ -137,7 +136,6 @@ public class Partie {
 		    	try {
 					Thread.sleep(1000);
 				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 		    	Date dateFin = new Date (System.currentTimeMillis()); //Relever l'heure a la fin du progamme (en milliseconde) 

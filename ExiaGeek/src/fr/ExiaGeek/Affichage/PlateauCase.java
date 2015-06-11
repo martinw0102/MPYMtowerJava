@@ -1,6 +1,5 @@
 package fr.ExiaGeek.Affichage;
 
-import java.awt.Image;
 import java.awt.image.BufferedImage;
 
 /**
@@ -8,6 +7,5 @@ import java.awt.image.BufferedImage;
  * @author matardarix
  */
 public interface PlateauCase {
-	public BufferedImage getBImage();
-	public Image getImage();
+	public BufferedImage getImage();
 }

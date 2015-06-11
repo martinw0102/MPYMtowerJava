@@ -2,6 +2,7 @@ package fr.ExiaGeek.BDD;
 
 import fr.ExiaGeek.Partie;
 import fr.ExiaGeek.Case.Chemin;
+import fr.ExiaGeek.Case.PosteDeTravail;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -86,16 +87,15 @@ public class BDDConnexion {
 		return chemin;
 	}
 	
-	public int[] selectCoordPoste(int[] coord) {
+	/*public ArrayList<PosteDeTravail> selectCoordPoste(ArrayList<PosteDeTravail> pt) {
 		try{
 			ResultSet resultSet = this.executeQuery(BDDExiaGeek.getQuerySelectCoord(1));
-			coord[0] = resultSet.getInt("X_PosteDeTravail");
-			coord[1] = resultSet.getInt("Y_PosteDeTravail");
+			pt.add(new PosteDeTravail())
 		}catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return coord;
-	}
+	}*/
 	
 	public int[] selectCoordSpawn(int[] coord)
 	{

@@ -1,6 +1,5 @@
 package fr.ExiaGeek.Case;
 
-import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -8,7 +7,7 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 public class Case implements fr.ExiaGeek.Affichage.PlateauCase {
-	protected Image image = null;
+	protected BufferedImage image = null;
 	protected char dessin;
 	protected Boolean vide;
 
@@ -31,12 +30,8 @@ public class Case implements fr.ExiaGeek.Affichage.PlateauCase {
 	}
 
 	@Override
-	public Image getImage() {
+	public BufferedImage getImage() {
 		return this.image;
 	}
 
-	@Override
-	public BufferedImage getBImage() {
-		return null;
-	}
 }

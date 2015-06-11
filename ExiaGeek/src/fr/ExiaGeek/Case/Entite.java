@@ -86,7 +86,7 @@ public abstract class Entite implements fr.ExiaGeek.Affichage.PlateauPiece{
 	}
 	
 	@Override
-	public BufferedImage getBImage(){
+	public BufferedImage getImage(){
 		
 		BufferedImage image = new BufferedImage(30,30,BufferedImage.TYPE_INT_ARGB);
 		Graphics g = image.getGraphics();
@@ -97,11 +97,8 @@ public abstract class Entite implements fr.ExiaGeek.Affichage.PlateauPiece{
 			g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_IN, 0.0f));
 			g.clearRect(0, 0, 30, 30);
 			g2d.setComposite(original);
-			}
+		}
 		g.drawImage(this.image, 0, 0, 30, 30, null);
-		
-		g.setColor(Color.red);
-		g.fillRect(0, 0, image.getWidth(), 5 );
 		
 		return image;
 	}
