@@ -5,12 +5,7 @@ import java.util.Date;
 
 import fr.ExiaGeek.Affichage.Plateau;
 import fr.ExiaGeek.BDD.BDDConnexion;
-import fr.ExiaGeek.Case.Bordure;
-import fr.ExiaGeek.Case.Case;
-import fr.ExiaGeek.Case.CaseVide;
-import fr.ExiaGeek.Case.Chemin;
-import fr.ExiaGeek.Case.Entite;
-import fr.ExiaGeek.Case.PosteDeTravail;
+import fr.ExiaGeek.Case.*;
 
 public class Partie {
 	private final static int HAUTEUR = 25, LARGEUR = 25;
@@ -34,6 +29,8 @@ public class Partie {
 		BDDConnexion bdd = new BDDConnexion();
 		bdd.open();
 		bdd.selectChemin(this.chemins);
+		int xS = bdd.selectXS();
+		int yS = bdd.selectYS();
 		bdd.close();
 		
 		Case uneCase = null;
@@ -41,6 +38,8 @@ public class Partie {
 			for(int x = 0; x < LARGEUR; x++){
 				if((x == 0) || (x == (LARGEUR - 1)) || ((y == 0) || (y == HAUTEUR - 1))){
 					uneCase = new Bordure();
+				}else if(x == xS && y == yS){
+					uneCase = new Spawn();
 				}else if(testChemin(chemins, x, y)){
 					uneCase = new Chemin();
 				}else{
@@ -51,7 +50,7 @@ public class Partie {
 		}
 		this.plateau = new Plateau(HAUTEUR, LARGEUR, this.cases);
 		
-		//this.placerPT();
+		this.placerPT();
 	}
 	
 	private boolean testChemin(ArrayList<Chemin> chemin, int x, int y){
@@ -100,18 +99,15 @@ public class Partie {
 	}
 	
 	private void placerPT(){		
-		/*BDDConnexion bdd = new BDDConnexion();
+		BDDConnexion bdd = new BDDConnexion();
 		bdd.open();
-		xPT = bdd.selectXPT();
-		yPT = bdd.selectYPT();
+		int xPT = bdd.selectXPT();
+		int yPT = bdd.selectYPT();
 		bdd.close();
-				
-		System.out.println(xPT);
-		System.out.println(yPT);*/
 		
 		final PosteDeTravail pt = new PosteDeTravail(this);
 		this.entites.add(pt);
-		this.placerEntite(pt, 4, 3);
+		this.placerEntite(pt, xPT, yPT);
 		this.plateau.placerPiece(pt);
 	}
 	

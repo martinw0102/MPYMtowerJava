@@ -16,8 +16,8 @@ import java.util.ArrayList;
  * @see {@link BDDExiaGeek} 
  */
 public class BDDConnexion {
-	private static final String url = "jdbc:mysql://192.168.1.47/exiageek"; 
-	private static final String user = "licorne";
+	private static final String url = "jdbc:mysql://localhost/exiageek"; 
+	private static final String user = "root";
 	private static final String passwd = "";
 	
 	private Connection conn;
@@ -87,13 +87,12 @@ public class BDDConnexion {
 		return chemin;
 	}
 	
-	/*public int selectXPT(){
+	public int selectXPT(){
 		int x = 0;
 		ResultSet resultSet = this.executeQuery(BDDExiaGeek.getQuerySelectCoord(1));
 		try{
 		      while(resultSet.next()){
 		    	  x = resultSet.getInt("X_PosteDeTravail");
-		    	  System.out.print("\t" + resultSet.getInt("X_PosteDeTravail") + "\t |");
 		    	}
 		}catch (SQLException e) {
 			e.printStackTrace();
@@ -108,8 +107,6 @@ public class BDDConnexion {
 		try{
 			 while(resultSet.next()){
 				 y = resultSet.getInt("Y_PosteDeTravail");
-				 System.out.print("\t" + resultSet.getInt("Y_PosteDeTravail") + "\t |");
-				 System.out.print("\t" + y + "\t |");
 			 }
 		}catch (SQLException e) {
 			e.printStackTrace();
@@ -117,17 +114,31 @@ public class BDDConnexion {
 		return y;
 	}
 	
-	public int[] selectCoordSpawn(int[] coord)
-	{
+	public int selectXS(){
+		int x = 0;
+		ResultSet resultSet = this.executeQuery(BDDExiaGeek.getQuerySelectCoord(1));
 		try{
-			ResultSet resultSet = this.executeQuery(BDDExiaGeek.getQuerySelectCoord(1));
-			coord[0] = resultSet.getInt("X_Spawn");
-			coord[1] = resultSet.getInt("Y_Spawn");
+		      while(resultSet.next()){
+		    	  x = resultSet.getInt("X_Spawn");
+		    	}
 		}catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return coord;
-	}*/
+		return x;
+	}
+	
+	public int selectYS(){
+		int y = 0;
+		ResultSet resultSet = this.executeQuery(BDDExiaGeek.getQuerySelectCoord(1));
+		try{
+		      while(resultSet.next()){
+		    	  y = resultSet.getInt("Y_Spawn");
+		    	}
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return y;
+	}
 	
 	public void insert() {
 		executeUpdate(BDDExiaGeek.getQueryInsertPartie(Partie.getScore()));
