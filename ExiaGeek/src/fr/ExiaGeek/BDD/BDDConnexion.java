@@ -87,7 +87,8 @@ public class BDDConnexion {
 		return chemin;
 	}
 	
-	public int selectXPT(int x){
+	/*public int selectXPT(){
+		int x = 0;
 		ResultSet resultSet = this.executeQuery(BDDExiaGeek.getQuerySelectCoord(1));
 		try{
 		      while(resultSet.next()){
@@ -100,8 +101,9 @@ public class BDDConnexion {
 		return x;
 	}
 	
-	public int selectYPT(final int y)
+	public int selectYPT()
 	{
+		int y = 0;
 		ResultSet resultSet = this.executeQuery(BDDExiaGeek.getQuerySelectCoord(1));
 		try{
 			 while(resultSet.next()){
@@ -125,7 +127,7 @@ public class BDDConnexion {
 			e.printStackTrace();
 		}
 		return coord;
-	}
+	}*/
 	
 	public void insert() {
 		executeUpdate(BDDExiaGeek.getQueryInsertPartie(Partie.getScore()));

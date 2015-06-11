@@ -24,25 +24,16 @@ public class Partie {
 	public int ressource;
 	public String pseudo;
 	public int nbVague;
-
-	private int yPT;
-
-	private int xPT;
 	private static int score = 0;
 
 	public Partie() {
 		this.cases = new Case[HAUTEUR][LARGEUR];
 		this.entites = new ArrayList<>();
 		this.chemins = new ArrayList<>();
-		
-		int coordS[] = null;
-		
+			
 		BDDConnexion bdd = new BDDConnexion();
 		bdd.open();
 		bdd.selectChemin(this.chemins);
-		
-		
-		
 		bdd.close();
 		
 		Case uneCase = null;
@@ -60,7 +51,7 @@ public class Partie {
 		}
 		this.plateau = new Plateau(HAUTEUR, LARGEUR, this.cases);
 		
-		this.placerPT();
+		//this.placerPT();
 	}
 	
 	private boolean testChemin(ArrayList<Chemin> chemin, int x, int y){
@@ -108,23 +99,20 @@ public class Partie {
 		return null;
 	}
 	
-	private void placerPT(){
-		int x = 0;
-		
-		BDDConnexion bdd = new BDDConnexion();
+	private void placerPT(){		
+		/*BDDConnexion bdd = new BDDConnexion();
 		bdd.open();
-		int xPT = 0, yPT = 0;
-		bdd.selectXPT(this.xPT);
-		bdd.selectYPT(this.yPT);
+		xPT = bdd.selectXPT();
+		yPT = bdd.selectYPT();
 		bdd.close();
 				
 		System.out.println(xPT);
-		System.out.println(yPT);
+		System.out.println(yPT);*/
 		
-		/*final PosteDeTravail pt = new PosteDeTravail(this);
+		final PosteDeTravail pt = new PosteDeTravail(this);
 		this.entites.add(pt);
-		this.placerEntite(pt, x, y);
-		this.plateau.placerPiece(pt);*/
+		this.placerEntite(pt, 4, 3);
+		this.plateau.placerPiece(pt);
 	}
 	
 	private void placerEntite(final Entite e, int x, int y){
