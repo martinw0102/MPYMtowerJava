@@ -2,7 +2,6 @@ package fr.ExiaGeek;
 
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.Iterator;
 
 import fr.ExiaGeek.Affichage.Plateau;
 import fr.ExiaGeek.BDD.BDDConnexion;
@@ -30,6 +29,7 @@ public class Partie {
 		this.cases = new Case[HAUTEUR][LARGEUR];
 		this.entites = new ArrayList<>();
 		this.chemins = new ArrayList<>();
+		
 		BDDConnexion bdd = new BDDConnexion();
 		bdd.open();
 		bdd.selectChemin(this.chemins);
