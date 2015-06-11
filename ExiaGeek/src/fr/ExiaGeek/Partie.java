@@ -40,7 +40,7 @@ public class Partie {
 			for(int x = 0; x < LARGEUR; x++){
 				if((x == 0) || (x == (LARGEUR - 1)) || ((y == 0) || (y == HAUTEUR - 1))){
 					uneCase = new Bordure();
-				}else if(chemins.contains(x) && chemins.contains(y)){
+				}else if(testChemin(chemins, x, y)){
 					uneCase = new Chemin();
 				}else{
 					uneCase = new CaseVide();
@@ -49,6 +49,15 @@ public class Partie {
 			}
 		}
 		this.plateau = new Plateau(HAUTEUR, LARGEUR, this.cases);
+	}
+	
+	private boolean testChemin(ArrayList<Chemin> chemin, int x, int y){
+		for(int i = 0; i < chemin.size(); i++){
+			if(chemin.get(i).getX() == x && chemin.get(i).getY() == y){
+				return true;
+			}
+		}
+		return false;
 	}
 	
 	public void afficher(){
