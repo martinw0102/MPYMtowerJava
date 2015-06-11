@@ -15,6 +15,7 @@ import javax.swing.JComboBox;
 
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.util.Date;
 
 
 
@@ -117,8 +118,23 @@ public class Lanceur extends JFrame {
 		public void actionPerformed(ActionEvent arg0){
 			final Partie maPartie = new Partie();
 			maPartie.afficher();
-		}
+
+						java.util.Date temps = new java.util.Date (System.currentTimeMillis ()); //Relever l'heure avant le debut du progamme (en milliseconde) 
+				    	try {
+							Thread.sleep(1000);
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+				    	Date dateFin = new Date (System.currentTimeMillis()); //Relever l'heure a la fin du progamme (en milliseconde) 
+				    	Date duree = new Date (System.currentTimeMillis()); //Pour calculer la différence
+				    	duree.setTime (dateFin.getTime () - temps.getTime ());  //Calcul de la différence
+				    	long secondes = duree.getTime () / 1000;
+				    	secondes %= 60;
+				    	System.out.println ("Votre score est: " + secondes);
+		}		
 	}
+	
 	
 	public class listenerChargerPartie implements ActionListener {
 		public void actionPerformed(ActionEvent arg0){
