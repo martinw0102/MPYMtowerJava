@@ -9,16 +9,15 @@ public abstract class Assaillants extends Entite {
 	protected int resistReseau;
 	protected int resistSysteme;
 	protected int butin;
-	
+
+	public Assaillants(Partie partie, char dessin, String image) {
+		super(partie, dessin, image);
+	}
+
 	protected void seDeplacer() {
 		
 	}
 	protected void attaquer() {
 		
 	}
-
-	public Assaillants(Partie partie, char dessin, String image, int x, int y) {
-		super(partie, dessin, image, x, y);
-	}
-
 }

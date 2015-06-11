@@ -11,19 +11,20 @@ public class Partie {
 	private final static int HAUTEUR = 25, LARGEUR = 25;
 	
 	private final Case cases[][];
-	private final ArrayList<Entite> entites;
 	private final ArrayList<Chemin> chemins;
+	private final ArrayList<Entite> vagueActuel;
 	private final Boolean affichageConsole = false;
 	private Plateau plateau;
 	
 	public int ressource;
 	public String pseudo;
 	public int nbVague;
+	
 	private static int score = 0;
 
 	public Partie() {
 		this.cases = new Case[HAUTEUR][LARGEUR];
-		this.entites = new ArrayList<>();
+		this.vagueActuel = new ArrayList<>();
 		this.chemins = new ArrayList<>();
 			
 		BDDConnexion bdd = new BDDConnexion();
@@ -49,8 +50,8 @@ public class Partie {
 			}
 		}
 		this.plateau = new Plateau(HAUTEUR, LARGEUR, this.cases);
-		
 		this.placerPT();
+		this.placerEnnemie(xS, yS);
 	}
 	
 	private boolean testChemin(ArrayList<Chemin> chemin, int x, int y){
@@ -73,7 +74,7 @@ public class Partie {
 	private void afficherConsole(){
 		for(int y = 0; y < HAUTEUR; y++){
 			for(int x = 0; x < LARGEUR; x++){
-				final Entite e = this.getEntite(x, y);
+				final Entite e = this.getVagueActuel(x, y);
 				if(e == null){
 					System.out.println(this.getXY(x, y).getDessin());
 				}else{
@@ -87,8 +88,8 @@ public class Partie {
 		this.plateau.rafraichir();
 	}
 	
-	public Entite getEntite(final int x, final int y){
-		for(final Entite e : this.entites){
+	public Entite getVagueActuel(final int x, final int y){
+		for(final Entite e : this.vagueActuel){
 			if(e != null){
 				if((e.getX() == x) && (e.getY() == y)){
 					return e;
@@ -106,9 +107,15 @@ public class Partie {
 		bdd.close();
 		
 		final PosteDeTravail pt = new PosteDeTravail(this);
-		this.entites.add(pt);
 		this.placerEntite(pt, xPT, yPT);
 		this.plateau.placerPiece(pt);
+	}
+	
+	private void placerEnnemie(int x, int y){
+		final ErreurHTTP404 e = new ErreurHTTP404(this);
+		
+		this.placerEntite(e, x, y);
+		this.plateau.placerPiece(e);
 	}
 	
 	private void placerEntite(final Entite e, int x, int y){
