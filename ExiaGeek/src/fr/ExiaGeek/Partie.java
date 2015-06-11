@@ -36,7 +36,7 @@ public class Partie {
 		BDDConnexion bdd = new BDDConnexion();
 		bdd.open();
 		bdd.selectChemin(this.chemins);
-		int xPoste = 0;
+		int coordPoste[];
 		//bdd.selectCoordSpawn(coordS);
 		bdd.selectXPT(xPoste);
 		bdd.close();
