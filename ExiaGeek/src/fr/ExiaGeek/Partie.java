@@ -24,6 +24,10 @@ public class Partie {
 	public int ressource;
 	public String pseudo;
 	public int nbVague;
+
+	private int yPT;
+
+	private int xPT;
 	private static int score = 0;
 
 	public Partie() {
@@ -109,12 +113,13 @@ public class Partie {
 		
 		BDDConnexion bdd = new BDDConnexion();
 		bdd.open();
-		//bdd.selectXPT(x);
-		//bdd.selectCoordPT(coordS);
-		bdd.selectXPT(xPoste);
+		int xPT = 0, yPT = 0;
+		bdd.selectXPT(this.xPT);
+		bdd.selectYPT(this.yPT);
 		bdd.close();
 				
-		System.out.println(x);
+		System.out.println(xPT);
+		System.out.println(yPT);
 		
 		/*final PosteDeTravail pt = new PosteDeTravail(this);
 		this.entites.add(pt);

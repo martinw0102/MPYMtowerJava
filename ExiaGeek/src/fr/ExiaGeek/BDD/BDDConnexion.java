@@ -91,10 +91,8 @@ public class BDDConnexion {
 		ResultSet resultSet = this.executeQuery(BDDExiaGeek.getQuerySelectCoord(1));
 		try{
 		      while(resultSet.next()){
-		    	  //x = resultSet.getInt("X_PosteDeTravail");
+		    	  x = resultSet.getInt("X_PosteDeTravail");
 		    	  System.out.print("\t" + resultSet.getInt("X_PosteDeTravail") + "\t |");
-		    	  System.out.print("\t" + resultSet.getInt("Y_PosteDeTravail") + "\t |");
-		    	  System.out.println("\n---------------------------------");
 		    	}
 		}catch (SQLException e) {
 			e.printStackTrace();
@@ -102,17 +100,19 @@ public class BDDConnexion {
 		return x;
 	}
 	
-	public int[] selectCoordPT(int[] coord)
+	public int selectYPT(final int y)
 	{
 		ResultSet resultSet = this.executeQuery(BDDExiaGeek.getQuerySelectCoord(1));
 		try{
-			
-			coord[0] = resultSet.getInt("X_PosteDeTravail");
-			coord[1] = resultSet.getInt("Y_PosteDeTravail");
+			 while(resultSet.next()){
+				 y = resultSet.getInt("Y_PosteDeTravail");
+				 System.out.print("\t" + resultSet.getInt("Y_PosteDeTravail") + "\t |");
+				 System.out.print("\t" + y + "\t |");
+			 }
 		}catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return coord;
+		return y;
 	}
 	
 	public int[] selectCoordSpawn(int[] coord)
