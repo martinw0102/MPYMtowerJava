@@ -3,7 +3,6 @@ package fr.ExiaGeek.Case;
 import fr.ExiaGeek.Partie;
 
 public abstract class Assaillants extends Entite {
-	
 	protected int attaque;
 	protected int vitDeplacement;
 	protected int resistReseau;
@@ -15,7 +14,9 @@ public abstract class Assaillants extends Entite {
 	}
 
 	protected void seDeplacer() {
-		
+		if(this.x + 1 == Chemin){
+			
+		}
 	}
 	protected void attaquer() {
 		

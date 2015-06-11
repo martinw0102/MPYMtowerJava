@@ -51,7 +51,7 @@ public class Partie {
 		}
 		this.plateau = new Plateau(HAUTEUR, LARGEUR, this.cases);
 		this.placerPT();
-		this.placerEnnemie(xS, yS);
+		this.placerEnnemi(xS, yS);
 	}
 	
 	private boolean testChemin(ArrayList<Chemin> chemin, int x, int y){
@@ -111,9 +111,9 @@ public class Partie {
 		this.plateau.placerPiece(pt);
 	}
 	
-	private void placerEnnemie(int x, int y){
+	private void placerEnnemi(int x, int y){
 		final ErreurHTTP404 e = new ErreurHTTP404(this);
-		
+		vagueActuel.add(e);
 		this.placerEntite(e, x, y);
 		this.plateau.placerPiece(e);
 	}
