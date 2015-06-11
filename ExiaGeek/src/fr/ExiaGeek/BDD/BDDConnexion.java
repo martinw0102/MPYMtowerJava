@@ -91,8 +91,9 @@ public class BDDConnexion {
 		ResultSet resultSet = this.executeQuery(BDDExiaGeek.getQuerySelectCoord(1));
 		try{
 		      while(resultSet.next()){
-		    	  x = resultSet.getInt("X_PosteDeTravail");
-		    	  System.out.print("\t" + x + "\t |");
+		    	  //x = resultSet.getInt("X_PosteDeTravail");
+		    	  System.out.print("\t" + resultSet.getInt("X_PosteDeTravail") + "\t |");
+		    	  System.out.print("\t" + resultSet.getInt("Y_PosteDeTravail") + "\t |");
 		    	  System.out.println("\n---------------------------------");
 		    	}
 		}catch (SQLException e) {
