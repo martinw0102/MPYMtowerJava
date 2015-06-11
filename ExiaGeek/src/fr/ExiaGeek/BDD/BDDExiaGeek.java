@@ -9,4 +9,8 @@ public class BDDExiaGeek {
 	public static String getQuerySelect(final int id) {
 		return "SELECT * FROM `chemin` WHERE `ID_Carte` = " + id;
 	}
+	
+	public static String getQuerySelectCoord(final int id) {
+		return "SELECT * FROM `carte` WHERE `ID_Carte` = " + id;
+	}
 }

@@ -86,6 +86,12 @@ public class BDDConnexion {
 		return chemin;
 	}
 	
+	public int[][] selectCoord(int coord[][]) throws SQLException {
+		ResultSet resultSet = this.executeQuery(BDDExiaGeek.getQuerySelectCoord(1));
+		int coord1[][] = { {resultSet.getInt("X_PosteDeTravail"), resultSet.getInt("X_Spawn")}, {resultSet.getInt("Y_PosteDeTravail"), resultSet.getInt("Y_Spawn")}};
+		return coord1;
+	}
+	
 	public void insert() {
 		executeUpdate(BDDExiaGeek.getQueryInsertPartie(Partie.getScore()));
 		System.out.println("Insertion effectue");
