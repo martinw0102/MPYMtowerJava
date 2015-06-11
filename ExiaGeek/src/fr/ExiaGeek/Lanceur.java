@@ -28,7 +28,7 @@ public class Lanceur extends JFrame {
 	
 	
 	private static final long serialVersionUID = -4248310360580329628L;
-
+	//public static long dateDebut;
 	
 	
 	private JTextField textFieldPseudo = new JTextField("Votre Pseudo");
@@ -42,6 +42,7 @@ public class Lanceur extends JFrame {
 	private listenerChargerPartie chargerPartie = new listenerChargerPartie();
 	
 	public Lanceur(){
+		Date dateDebut = new Date();
 		this.setTitle("ExiaGeek");
         this.setSize(420, 150);
         this.setLocationRelativeTo(null);
@@ -119,8 +120,8 @@ public class Lanceur extends JFrame {
 			final Partie maPartie = new Partie();
 			maPartie.afficher();
 
-						java.util.Date dateDebut = new java.util.Date (System.currentTimeMillis ()); //Relever l'heure avant le debut du progamme (en milliseconde) 
-				    	/*try {
+						dateDebut.System.currentTimeMillis(); //Relever l'heure avant le debut du progamme (en milliseconde) 
+					    	/*try {
 							Thread.sleep(1000);
 						} catch (InterruptedException e) {
 							// TODO Auto-generated catch block
