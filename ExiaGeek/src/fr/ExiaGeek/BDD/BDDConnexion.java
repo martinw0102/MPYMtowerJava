@@ -102,6 +102,19 @@ public class BDDConnexion {
 		return x;
 	}
 	
+	public int[] selectCoordPT(int[] coord)
+	{
+		ResultSet resultSet = this.executeQuery(BDDExiaGeek.getQuerySelectCoord(1));
+		try{
+			
+			coord[0] = resultSet.getInt("X_PosteDeTravail");
+			coord[1] = resultSet.getInt("Y_PosteDeTravail");
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return coord;
+	}
+	
 	public int[] selectCoordSpawn(int[] coord)
 	{
 		try{
