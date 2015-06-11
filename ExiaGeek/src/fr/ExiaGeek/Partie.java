@@ -103,19 +103,19 @@ public class Partie {
 	}
 	
 	private void placerPT(){
-		/*ArrayList<PosteDeTravail> pt = new ArrayList();
+		int x = 0;
 		
 		BDDConnexion bdd = new BDDConnexion();
 		bdd.open();
-		bdd.selectCoordPoste(pt);
+		bdd.selectXPT(x);
 		bdd.close();
+				
+		System.out.println(x);
 		
-		System.out.println(coord[0] + "  " + coord[1]);*/
-		
-		final PosteDeTravail pt = new PosteDeTravail(this);
+		/*final PosteDeTravail pt = new PosteDeTravail(this);
 		this.entites.add(pt);
-		this.placerEntite(pt, 4, 3);
-		this.plateau.placerPiece(pt);
+		this.placerEntite(pt, x, y);
+		this.plateau.placerPiece(pt);*/
 	}
 	
 	private void placerEntite(final Entite e, int x, int y){

@@ -6,7 +6,7 @@ public class BDDExiaGeek {
 		return "INSERT INTO `partie` (`Score`, `PV_PosteDeTravail`, `PO`, `ID_Carte`)   VALUES ('"+ score +"', '"+ 250 +"', '"+ 7895 +"', '"+ 1 +"')";
 	}
 	
-	public static String getQuerySelect(final int id) {
+	public static String getQuerySelectChemin(final int id) {
 		return "SELECT * FROM `chemin` WHERE `ID_Carte` = " + id;
 	}
 	

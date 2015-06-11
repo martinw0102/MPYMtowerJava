@@ -76,7 +76,7 @@ public class BDDConnexion {
 	}
 	
 	public ArrayList<Chemin> selectChemin(ArrayList<Chemin> chemin) {
-		ResultSet resultSet = this.executeQuery(BDDExiaGeek.getQuerySelect(1));
+		ResultSet resultSet = this.executeQuery(BDDExiaGeek.getQuerySelectChemin(1));
 		try {
 			for (; resultSet.next() ;) {
 				chemin.add(new Chemin(resultSet.getInt("X_Chemin"), resultSet.getInt("Y_Chemin")));
@@ -87,15 +87,15 @@ public class BDDConnexion {
 		return chemin;
 	}
 	
-	/*public ArrayList<PosteDeTravail> selectCoordPoste(ArrayList<PosteDeTravail> pt) {
+	public int selectXPT(int x){
 		try{
 			ResultSet resultSet = this.executeQuery(BDDExiaGeek.getQuerySelectCoord(1));
-			pt.add(new PosteDeTravail())
+			x = resultSet.getInt("X_PosteDeTravail");
 		}catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return coord;
-	}*/
+		return x;
+	}
 	
 	public int[] selectCoordSpawn(int[] coord)
 	{
