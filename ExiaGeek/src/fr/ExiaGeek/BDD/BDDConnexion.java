@@ -87,13 +87,14 @@ public class BDDConnexion {
 		return chemin;
 	}
 	
-	public int selectXPT(int x){
+	public int[] selectXPT(int[] x){
 		ResultSet resultSet = this.executeQuery(BDDExiaGeek.getQuerySelectCoord(1));
 		try{
-			//x = resultSet.getInt("X_PosteDeTravail");
 		      while(resultSet.next()){
-		    	  System.out.print("\t" + resultSet.getInt("X_PosteDeTravail") + "\t |");
-		    	  System.out.print("\t" + resultSet.getInt("Y_PosteDeTravail") + "\t |");
+		    	  x[0] = resultSet.getInt("X_PosteDeTravail");
+		    	  x[1] = resultSet.getInt("Y_PosteDeTravail");
+		    	  System.out.print("\t" + x[0] + "\t |");
+		    	  System.out.print("\t" + x[1] + "\t |");
 		    	  System.out.println("\n---------------------------------");
 		    	}
 		}catch (SQLException e) {

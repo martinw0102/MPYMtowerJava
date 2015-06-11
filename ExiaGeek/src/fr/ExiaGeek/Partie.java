@@ -107,7 +107,7 @@ public class Partie {
 		
 		BDDConnexion bdd = new BDDConnexion();
 		bdd.open();
-		bdd.selectXPT(x);
+		//bdd.selectXPT(x);
 		bdd.close();
 				
 		System.out.println(x);
