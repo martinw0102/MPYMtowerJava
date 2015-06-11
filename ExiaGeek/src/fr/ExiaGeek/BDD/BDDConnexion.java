@@ -17,7 +17,7 @@ import java.util.ArrayList;
  */
 public class BDDConnexion {
 	private static final String url = "jdbc:mysql://192.168.1.47/exiageek"; 
-	private static final String user = "root";
+	private static final String user = "licorne";
 	private static final String passwd = "";
 	
 	private Connection conn;
